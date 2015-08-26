@@ -508,7 +508,25 @@ angular.module('myApp.dataProvider', [])
                         price:      4050,
                         diamonds:   14
                     }
-                ]
+                ],
+                "max":  {
+                    allMax: {
+                        attack:     66,
+                        fireSpeed:  13.3,
+                        armor:      379,
+                        movement:   62.2,
+                        levels:     5,
+                        totalPrice: 0,
+                        totalTime:  0,
+                        totalDiamonds: 0
+                    },
+                    maxMovementFireSpeed: {
+                        attack:     66,
+                        fireSpeed:  13.3,
+                        armor:      379,
+                        movement:   62.2
+                    }
+                }
             },
             "DORADO":   {
                 "turret": [
@@ -715,7 +733,25 @@ angular.module('myApp.dataProvider', [])
                         price:      4050,
                         diamonds:   14
                     }
-                ]
+                ],
+                "max":  {
+                    allMax: {
+                        attack:     66,
+                        fireSpeed:  13.3,
+                        armor:      379,
+                        movement:   62.2,
+                        levels:     5,
+                        totalPrice: 0,
+                        totalTime:  0,
+                        days:       0
+                    },
+                    maxMovementFireSpeed: {
+                        attack:     66,
+                        fireSpeed:  13.3,
+                        armor:      379,
+                        movement:   62.2
+                    }
+                }
             },
             "DRACO": {},
             "URSA": {},

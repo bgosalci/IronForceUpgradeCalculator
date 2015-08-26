@@ -1,79 +1,75 @@
 <ion-view view-title="Tank List">
     <ion-content>
-        <div class="row responsive-md gallery">
-            <div class="col col-50" ng-repeat="tank in tanks">
-                <div class="card">
-                    <div class="item item-divider-android positive-bg">
-                        <label class="text-center">
-                            <div class="item-content largeTitle light">
-                                {{tank.name}}
-                            </div>
+        <div class="card" ng-repeat="tank in tanks">
+            <div class="item item-divider-android positive-bg">
+                <label class="text-center">
+                    <div class="item-content largeTitle light">
+                        {{tank.name}}
+                    </div>
+                </label>
+            </div>
+            <div class="item item-image">
+                <img ng-src="img/{{tank.image}}"/>
+            </div>
+            <div class="list-borderless">
+                <div class="row">
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Tier:</span>
+                            <span class="text-left item-content">
+                                {{tank.tier}}
+                            </span>
                         </label>
                     </div>
-                    <div class="item item-image">
-                        <img ng-src="img/{{tank.image}}"/>
-                    </div>
-                    <div class="list-borderless">
-                        <div class="row">
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Tier:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.tier}}
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Price:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.price}} {{tank.payType}}
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Attack:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.basicInfo.attack}}
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Armor:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.basicInfo.armor}}
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Fire Speed:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.basicInfo.fireSpeed}}
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col">
-                                <label class="text-left item item-input">
-                                    <span class="input-label positive">Movement:</span>
-                                    <span class="text-left item-content">
-                                        {{tank.basicInfo.movement}}
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-divider-android item-icon-left positive" ng-click="goToUpgradeDetails(tank.name)">
-                        <i class="icon ion-eye my-icon"></i>
-                        View Upgrade Details
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Price:</span>
+                            <span class="text-left item-content">
+                                {{tank.price}} {{tank.payType}}
+                            </span>
+                        </label>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Attack:</span>
+                            <span class="text-left item-content">
+                                {{tank.basicInfo.attack}}
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Armor:</span>
+                            <span class="text-left item-content">
+                                {{tank.basicInfo.armor}}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Fire Speed:</span>
+                            <span class="text-left item-content">
+                                {{tank.basicInfo.fireSpeed}}
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-50">
+                        <label class="text-left item item-input">
+                            <span class="input-label positive">Movement:</span>
+                            <span class="text-left item-content">
+                                {{tank.basicInfo.movement}}
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-divider-android item-icon-left positive" ng-click="goToUpgradeDetails(tank.name)">
+                <i class="icon ion-eye my-icon"></i>
+                View Upgrade Details
             </div>
         </div>
     </ion-content>

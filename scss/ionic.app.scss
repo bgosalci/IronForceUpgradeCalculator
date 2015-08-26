@@ -30,6 +30,12 @@ $royal:                           #886aea !default;
 $dark:                            #444 !default;
 $base-background-color:           rgba(27, 0, 0, 0.04) !default;
 
+$big-bg:                          '../img/my-bg.png';
+.scroll-bg {
+  background: url($big-bg) no-repeat center center fixed;
+  background-size: cover;
+}
+
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
