@@ -1,0 +1,64 @@
+div.my-largeText{
+    font-size: x-large;
+}
+
+.my-label{
+    color: #719ECC !important;
+    font-weight: bold !important;
+}
+
+.my-background{
+    background-color: #e4e1e1;
+}
+
+.my-popover{
+    height: 125px;
+    width: 220px;
+}
+
+.my-icon{
+    font-size:30px !important;
+    display:inline;
+}
+
+.my-icon-orange{
+    color: #fc9e53;
+    font-size:30px !important;
+    display:inline;
+}
+
+.my-icon-red{
+    color: #ea6760;
+    font-size:30px !important;
+    display:inline;
+}
+
+.card{
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.2)
+}
+
+.is-active {
+    background-color: #6abe60;
+}
+
+.is-open {
+    background-color: #749fcb;
+}
+
+.is-done {
+    background-color: #6abe60;
+}
+
+.warning {
+    background-color: #fc9e53;
+}
+
+.error {
+    background-color: #ea6760;
+}
+
+.gallery {
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 50px;
+}

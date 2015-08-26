@@ -1,0 +1,360 @@
+<ion-view view-title="{{tankName}} Upgrade Details">
+    <ion-side-menus enable-menu-with-back-views="false">
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-stable bar-positive has-tabs-top">
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-android-menu" menu-toggle="left"></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+            <ion-tabs class="tabs-striped tabs-top tabs-positive">
+                <ion-tab title="TURRET">
+                    <ion-nav-view>
+                        <ion-content>
+                            <div class="card" ng-repeat="item in tankDetails.turret">
+                                <div class="item item-divider-android positive-bg">
+                                    <label class="text-center">
+                                        <div class="item-content largeTitle light">
+                                            Level: {{item.level}} - Time: {{item.time}}
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="list-borderless">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Attack:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.attack}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Fire Speed:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.fireSpeed}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.price | currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.diamonds}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+                <ion-tab title="BARREL">
+                    <ion-nav-view>
+                        <ion-content>
+                            <div class="card" ng-repeat="item in tankDetails.barrel">
+                                <div class="item item-divider-android positive-bg">
+                                    <label class="text-center">
+                                        <div class="item-content largeTitle light">
+                                            Level: {{item.level}} - Time: {{item.time}}
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="list-borderless">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Attack:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.attack}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Fire Speed:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.fireSpeed}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.price | currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.diamonds}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+                <ion-tab title="ARMOR">
+                    <ion-nav-view>
+                        <ion-content>
+                            <div class="card" ng-repeat="item in tankDetails.armor">
+                                <div class="item item-divider-android positive-bg">
+                                    <label class="text-center">
+                                        <div class="item-content largeTitle light">
+                                            Level: {{item.level}} - Time: {{item.time}}
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="list-borderless">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Armor:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.armor}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Movement:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.movement}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.price | currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.diamonds}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+                <ion-tab title="ENGINE">
+                    <ion-nav-view>
+                        <ion-content>
+                            <div class="card" ng-repeat="item in tankDetails.engine">
+                                <div class="item item-divider-android positive-bg">
+                                    <label class="text-center">
+                                        <div class="item-content largeTitle light">
+                                            Level: {{item.level}} - Time: {{item.time}}
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="list-borderless">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Movement:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.movement}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive"></span>
+                                                <span class="text-left item-content">
+
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.price | currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.diamonds}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+                <ion-tab title="TRUCKS">
+                    <ion-nav-view>
+                        <ion-content>
+                            <div class="card" ng-repeat="item in tankDetails.trucks">
+                                <div class="item item-divider-android positive-bg">
+                                    <label class="text-center">
+                                        <div class="item-content largeTitle light">
+                                            Level: {{item.level}} - Time: {{item.time}}
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="list-borderless">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Armor:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.armor}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Movement:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.movement}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.price | currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{item.diamonds}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+                <ion-tab title="MAX">
+                    <ion-nav-view>
+                        <ion-content>
+
+                        </ion-content>
+                    </ion-nav-view>
+                </ion-tab>
+            </ion-tabs>
+        </ion-side-menu-content>
+        <ion-side-menu side="left" width="150">
+            <ion-header-bar class="bar-stable bar-positive has-tabs-top">
+                <h1 class="title">Menu</h1>
+            </ion-header-bar>
+            <ion-content>
+                <ion-list>
+                    <ion-item ng-click="goToTankList()">
+                        Tank List
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('HYDRUS')">
+                        HYDRUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('DORADO')">
+                        DORADO
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('DRACO')">
+                        DRACO
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('URSA')">
+                        URSA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('APUS')">
+                        APUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('SIRUS')">
+                        SIRUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('AQUILA')">
+                        AQUILA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('LUPUS')">
+                        LUPUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('CORVUS')">
+                        CORVUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('LYNX')">
+                        LYNX
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.LYNXS')">
+                        S.LYNXS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('VULPECULA')">
+                        VULPECULA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.VULPECULA')">
+                        S.VULPECULA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('LACERTA')">
+                        LACERTA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.LACERTA')">
+                        S.LACERTA
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('SCORPIUS')">
+                        SCORPIUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.SCORPIUS')">
+                        S.SCORPIUS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('PAVO')">
+                        PAVO
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.PAVO')">
+                        S.PAVO
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('MONOCEROS')">
+                        MONOCEROS
+                    </ion-item>
+                    <ion-item ng-click="goToUpgradeDetails('S.MONOCEROS')">
+                        S.MONOCEROS
+                    </ion-item>
+                </ion-list>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
+</ion-view>
