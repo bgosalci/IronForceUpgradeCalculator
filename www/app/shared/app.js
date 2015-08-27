@@ -4,7 +4,8 @@ angular.module('myApp', [
     'myApp.store',
     'myApp.routing',
     'myApp.dataProvider',
-    'myApp.tankList-Controller'
+    'myApp.tankController',
+    'myApp.tankService'
 ])
     .run(['$ionicPlatform', '$state', 'store', 'myAppRouting',
         function ($ionicPlatform, $state, store, myAppRouting) {
@@ -41,13 +42,13 @@ angular.module('myApp', [
                          cache: false,
                          url: '/tankList',
                          templateUrl: 'app/components/tankList/tankList-View.html',
-                         controller: 'tankList-Controller'
+                         controller: 'tankController'
                      })
                      .state('upgradeDetails', {
                          cache: false,
                          url: '/upgradeDetails',
                          templateUrl: 'app/components/upgradeDetails/upgradeDetails-View.html',
-                         controller: 'tankList-Controller'
+                         controller: 'tankController'
                      });
                  $urlRouterProvider.otherwise('/tankList');
              }

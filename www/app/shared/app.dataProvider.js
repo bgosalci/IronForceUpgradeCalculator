@@ -92,8 +92,7 @@ angular.module('myApp.dataProvider', [])
                     fireSpeed:  9.5,
                     movement:   60.0
                 }
-            }
-            ,
+            },
             {
                 name:   'LUPUS',
                 tier:   3,
@@ -285,7 +284,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     6,
                         fireSpeed:  0,
                         time:       '1m',
-                        calcTime:   3600,
+                        calcTime:   60,
                         price:      2500,
                         diamonds:   1
                     },
@@ -294,7 +293,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '15m',
-                        calcTime:   3600 * 15,
+                        calcTime:   60 * 15,
                         price:      4050,
                         diamonds:   1
                     },
@@ -303,7 +302,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '1h',
-                        calcTime:   3600 * 60,
+                        calcTime:   60 * 60,
                         price:      6550,
                         diamonds:   4
                     },
@@ -312,7 +311,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '3h',
-                        calcTime:   3600 * 180,
+                        calcTime:   60 * 180,
                         price:      10600,
                         diamonds:   8
                     },
@@ -321,7 +320,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '3h 50m',
-                        calcTime:   3600 * 240,
+                        calcTime:   60 * 230,
                         price:      17150,
                         diamonds:   14
                     }
@@ -332,7 +331,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.6,
                         time:       '1m',
-                        calcTime:   3600,
+                        calcTime:   60,
                         price:      2250,
                         diamonds:   1
                     },
@@ -341,7 +340,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '15m',
-                        calcTime:   3600 * 15,
+                        calcTime:   60 * 15,
                         price:      3650,
                         diamonds:   1
                     },
@@ -350,7 +349,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '1h',
-                        calcTime:   3600 * 60,
+                        calcTime:   60 * 60,
                         price:      5900,
                         diamonds:   4
                     },
@@ -359,7 +358,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '3h',
-                        calcTime:   3600 * 180,
+                        calcTime:   60 * 180,
                         price:      9550,
                         diamonds:   8
                     },
@@ -368,7 +367,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '3h 50m',
-                        calcTime:   3600 * 240,
+                        calcTime:   60 * 230,
                         price:      15450,
                         diamonds:   14
                     }
@@ -379,7 +378,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      12,
                         movement:   0,
                         time:       '1m',
-                        calcTime:   3600,
+                        calcTime:   60,
                         price:      2150,
                         diamonds:   1
                     },
@@ -388,7 +387,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      12,
                         movement:   0,
                         time:       '15m',
-                        calcTime:   3600 * 15,
+                        calcTime:   60 * 15,
                         price:      3500,
                         diamonds:   1
                     },
@@ -397,7 +396,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      18,
                         movement:   0,
                         time:       '1h',
-                        calcTime:   3600 * 60,
+                        calcTime:   60 * 60,
                         price:      5650,
                         diamonds:   4
                     },
@@ -406,7 +405,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      24,
                         movement:   0,
                         time:       '3h',
-                        calcTime:   3600 * 180,
+                        calcTime:   60 * 180,
                         price:      9150,
                         diamonds:   8
                     },
@@ -415,7 +414,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      27,
                         movement:   0,
                         time:       '3h 50m',
-                        calcTime:   3600 * 140,
+                        calcTime:   60 * 230,
                         price:      14800,
                         diamonds:   14
                     }
@@ -425,7 +424,7 @@ angular.module('myApp.dataProvider', [])
                         level:      1,
                         movement:   0.6,
                         time:       '1m',
-                        calcTime:   3600,
+                        calcTime:   60,
                         price:      1500,
                         diamonds:   1
                     },
@@ -433,7 +432,7 @@ angular.module('myApp.dataProvider', [])
                         level:      2,
                         movement:   0.6,
                         time:       '15m',
-                        calcTime:   3600 * 15,
+                        calcTime:   60 * 15,
                         price:      2450,
                         diamonds:   1
                     },
@@ -441,7 +440,7 @@ angular.module('myApp.dataProvider', [])
                         level:      3,
                         movement:   0.9,
                         time:       '1h',
-                        calcTime:   3600 * 60,
+                        calcTime:   60 * 60,
                         price:      3950,
                         diamonds:   4
                     },
@@ -449,7 +448,7 @@ angular.module('myApp.dataProvider', [])
                         level:      4,
                         movement:   1.2,
                         time:       '3h',
-                        calcTime:   3600 * 180,
+                        calcTime:   60 * 180,
                         price:      6400,
                         diamonds:   8
                     },
@@ -457,7 +456,7 @@ angular.module('myApp.dataProvider', [])
                         level:      5,
                         movement:   1.5,
                         time:       '3h 50m',
-                        calcTime:   3600 * 240,
+                        calcTime:   60 * 230,
                         price:      10350,
                         diamonds:   14
                     }
@@ -468,7 +467,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.3,
                         time:       '1m',
-                        calcTime:   3600,
+                        calcTime:   60,
                         price:      600,
                         diamonds:   1
                     },
@@ -477,7 +476,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.3,
                         time:       '15m',
-                        calcTime:   3600 * 15,
+                        calcTime:   60 * 15,
                         price:      950,
                         diamonds:   1
                     },
@@ -486,7 +485,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.6,
                         time:       '1h',
-                        calcTime:   3600 * 60,
+                        calcTime:   60 * 60,
                         price:      1550,
                         diamonds:   4
                     },
@@ -495,7 +494,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      9,
                         movement:   0.6,
                         time:       '3h',
-                        calcTime:   3600 * 180,
+                        calcTime:   60 * 180,
                         price:      2500,
                         diamonds:   8
                     },
@@ -504,7 +503,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      9,
                         movement:   0.6,
                         time:       '3h 50m',
-                        calcTime:   3600 * 240,
+                        calcTime:   60 * 230,
                         price:      4050,
                         diamonds:   14
                     }
@@ -535,6 +534,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     6,
                         fireSpeed:  0,
                         time:       '1m',
+                        calcTime:   60,
                         price:      2500,
                         diamonds:   1
                     },
@@ -543,6 +543,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '15m',
+                        calcTime:   60* 15,
                         price:      4050,
                         diamonds:   1
                     },
@@ -551,6 +552,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '1h',
+                        calcTime:   60 * 60,
                         price:      6550,
                         diamonds:   4
                     },
@@ -559,6 +561,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '3h',
+                        calcTime:   60 * 180,
                         price:      10600,
                         diamonds:   8
                     },
@@ -567,6 +570,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     3,
                         fireSpeed:  0,
                         time:       '3h 50m',
+                        calcTime:   60 * 230,
                         price:      17150,
                         diamonds:   14
                     }
@@ -577,6 +581,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.6,
                         time:       '1m',
+                        calcTime:   60,
                         price:      2250,
                         diamonds:   1
                     },
@@ -585,6 +590,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '15m',
+                        calcTime:   60 *15,
                         price:      3650,
                         diamonds:   1
                     },
@@ -593,6 +599,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '1h',
+                        calcTime:   60 * 60,
                         price:      5900,
                         diamonds:   4
                     },
@@ -601,6 +608,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '3h',
+                        calcTime:   60 * 180,
                         price:      9550,
                         diamonds:   8
                     },
@@ -609,6 +617,7 @@ angular.module('myApp.dataProvider', [])
                         attack:     0,
                         fireSpeed:  0.3,
                         time:       '3h 50m',
+                        calcTime:   60 * 230,
                         price:      15450,
                         diamonds:   14
                     }
@@ -619,6 +628,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      12,
                         movement:   0,
                         time:       '1m',
+                        calcTime:   60,
                         price:      2150,
                         diamonds:   1
                     },
@@ -627,6 +637,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      12,
                         movement:   0,
                         time:       '15m',
+                        calcTime:   60 * 15,
                         price:      3500,
                         diamonds:   1
                     },
@@ -635,6 +646,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      18,
                         movement:   0,
                         time:       '1h',
+                        calcTime:   60 * 60,
                         price:      5650,
                         diamonds:   4
                     },
@@ -643,6 +655,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      24,
                         movement:   0,
                         time:       '3h',
+                        calcTime:   60 * 180,
                         price:      9150,
                         diamonds:   8
                     },
@@ -651,6 +664,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      27,
                         movement:   0,
                         time:       '3h 50m',
+                        calcTime:   60 * 230,
                         price:      14800,
                         diamonds:   14
                     }
@@ -660,6 +674,7 @@ angular.module('myApp.dataProvider', [])
                         level:      1,
                         movement:   0.6,
                         time:       '1m',
+                        calcTime:   60,
                         price:      1500,
                         diamonds:   1
                     },
@@ -667,6 +682,7 @@ angular.module('myApp.dataProvider', [])
                         level:      2,
                         movement:   0.6,
                         time:       '15m',
+                        calcTime:   60 * 15,
                         price:      2450,
                         diamonds:   1
                     },
@@ -674,6 +690,7 @@ angular.module('myApp.dataProvider', [])
                         level:      3,
                         movement:   0.9,
                         time:       '1h',
+                        calcTime:   60 * 60,
                         price:      3950,
                         diamonds:   4
                     },
@@ -681,6 +698,7 @@ angular.module('myApp.dataProvider', [])
                         level:      4,
                         movement:   1.2,
                         time:       '3h',
+                        calcTime:   60 * 180,
                         price:      6400,
                         diamonds:   8
                     },
@@ -688,6 +706,7 @@ angular.module('myApp.dataProvider', [])
                         level:      5,
                         movement:   1.5,
                         time:       '3h 50m',
+                        calcTime:   60 * 230,
                         price:      10350,
                         diamonds:   14
                     }
@@ -698,6 +717,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.3,
                         time:       '1m',
+                        calcTime:   60,
                         price:      600,
                         diamonds:   1
                     },
@@ -706,6 +726,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.3,
                         time:       '15m',
+                        calcTime:   60 * 15,
                         price:      950,
                         diamonds:   1
                     },
@@ -714,6 +735,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      6,
                         movement:   0.6,
                         time:       '1h',
+                        calcTime:   60 * 60,
                         price:      1550,
                         diamonds:   4
                     },
@@ -722,6 +744,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      9,
                         movement:   0.6,
                         time:       '3h',
+                        calcTime:   60 * 180,
                         price:      2500,
                         diamonds:   8
                     },
@@ -730,6 +753,7 @@ angular.module('myApp.dataProvider', [])
                         armor:      9,
                         movement:   0.6,
                         time:       '3h 50m',
+                        calcTime:   60 * 230,
                         price:      4050,
                         diamonds:   14
                     }
@@ -762,7 +786,274 @@ angular.module('myApp.dataProvider', [])
             "CORVUS": {},
             "LYNX": {},
             "S.LYNX": {},
-            "VULPECULA": {},
+            "VULPECULA": {
+                "turret": [
+                    {
+                        level:      1,
+                        attack:     8,
+                        fireSpeed:  0,
+                        time:       '1m',
+                        calcTime:   60,
+                        price:      2500,
+                        diamonds:   1
+                    },
+                    {
+                        level:      2,
+                        attack:     5,
+                        fireSpeed:  0,
+                        time:       '15m',
+                        calcTime:   60 * 15,
+                        price:      4050,
+                        diamonds:   1
+                    },
+                    {
+                        level:      3,
+                        attack:     4,
+                        fireSpeed:  0,
+                        time:       '1h',
+                        calcTime:   60 * 60,
+                        price:      6550,
+                        diamonds:   4
+                    },
+                    {
+                        level:      4,
+                        attack:     4,
+                        fireSpeed:  0,
+                        time:       '3h',
+                        calcTime:   60 * 180,
+                        price:      10600,
+                        diamonds:   8
+                    },
+                    {
+                        level:      5,
+                        attack:     5,
+                        fireSpeed:  0,
+                        time:       '3h 50m',
+                        calcTime:   60 * 230,
+                        price:      17150,
+                        diamonds:   14
+                    },
+                    {
+                        level:      6,
+                        attack:     4,
+                        fireSpeed:  0,
+                        time:       '8h',
+                        calcTime:   60 * 480,
+                        price:      23150,
+                        diamonds:   18
+                    },
+                    {
+                        level:      7,
+                        attack:     9,
+                        fireSpeed:  0,
+                        time:       '10h 20m',
+                        calcTime:   60 * 620,
+                        price:      3120,
+                        diamonds:   14
+                    }
+                ],
+                "barrel": [
+                    {
+                        level:      1,
+                        attack:     0,
+                        fireSpeed:  0.6,
+                        time:       '1m',
+                        calcTime:   60,
+                        price:      2250,
+                        diamonds:   1
+                    },
+                    {
+                        level:      2,
+                        attack:     0,
+                        fireSpeed:  0.3,
+                        time:       '15m',
+                        calcTime:   60 * 15,
+                        price:      3650,
+                        diamonds:   1
+                    },
+                    {
+                        level:      3,
+                        attack:     0,
+                        fireSpeed:  0.3,
+                        time:       '1h',
+                        calcTime:   60 * 60,
+                        price:      5900,
+                        diamonds:   4
+                    },
+                    {
+                        level:      4,
+                        attack:     0,
+                        fireSpeed:  0.3,
+                        time:       '3h',
+                        calcTime:   60 * 180,
+                        price:      9550,
+                        diamonds:   8
+                    },
+                    {
+                        level:      5,
+                        attack:     0,
+                        fireSpeed:  0.3,
+                        time:       '3h 50m',
+                        calcTime:   60 * 230,
+                        price:      15450,
+                        diamonds:   14
+                    }
+                ],
+                "armor": [
+                    {
+                        level:      1,
+                        armor:      12,
+                        movement:   0,
+                        time:       '1m',
+                        calcTime:   60,
+                        price:      2150,
+                        diamonds:   1
+                    },
+                    {
+                        level:      2,
+                        armor:      12,
+                        movement:   0,
+                        time:       '15m',
+                        calcTime:   60 * 15,
+                        price:      3500,
+                        diamonds:   1
+                    },
+                    {
+                        level:      3,
+                        armor:      18,
+                        movement:   0,
+                        time:       '1h',
+                        calcTime:   60 * 60,
+                        price:      5650,
+                        diamonds:   4
+                    },
+                    {
+                        level:      4,
+                        armor:      24,
+                        movement:   0,
+                        time:       '3h',
+                        calcTime:   60 * 180,
+                        price:      9150,
+                        diamonds:   8
+                    },
+                    {
+                        level:      5,
+                        armor:      27,
+                        movement:   0,
+                        time:       '3h 50m',
+                        calcTime:   60 * 140,
+                        price:      14800,
+                        diamonds:   14
+                    }
+                ],
+                "engine": [
+                    {
+                        level:      1,
+                        movement:   0.6,
+                        time:       '1m',
+                        calcTime:   60,
+                        price:      1500,
+                        diamonds:   1
+                    },
+                    {
+                        level:      2,
+                        movement:   0.6,
+                        time:       '15m',
+                        calcTime:   60 * 15,
+                        price:      2450,
+                        diamonds:   1
+                    },
+                    {
+                        level:      3,
+                        movement:   0.9,
+                        time:       '1h',
+                        calcTime:   60 * 60,
+                        price:      3950,
+                        diamonds:   4
+                    },
+                    {
+                        level:      4,
+                        movement:   1.2,
+                        time:       '3h',
+                        calcTime:   60 * 180,
+                        price:      6400,
+                        diamonds:   8
+                    },
+                    {
+                        level:      5,
+                        movement:   1.5,
+                        time:       '3h 50m',
+                        calcTime:   60 * 230,
+                        price:      10350,
+                        diamonds:   14
+                    }
+                ],
+                "trucks": [
+                    {
+                        level:      1,
+                        armor:      6,
+                        movement:   0.3,
+                        time:       '1m',
+                        calcTime:   60,
+                        price:      600,
+                        diamonds:   1
+                    },
+                    {
+                        level:      2,
+                        armor:      6,
+                        movement:   0.3,
+                        time:       '15m',
+                        calcTime:   60 * 15,
+                        price:      950,
+                        diamonds:   1
+                    },
+                    {
+                        level:      3,
+                        armor:      6,
+                        movement:   0.6,
+                        time:       '1h',
+                        calcTime:   60 * 60,
+                        price:      1550,
+                        diamonds:   4
+                    },
+                    {
+                        level:      4,
+                        armor:      9,
+                        movement:   0.6,
+                        time:       '3h',
+                        calcTime:   60 * 180,
+                        price:      2500,
+                        diamonds:   8
+                    },
+                    {
+                        level:      5,
+                        armor:      9,
+                        movement:   0.6,
+                        time:       '3h 50m',
+                        calcTime:   60 * 230,
+                        price:      4050,
+                        diamonds:   14
+                    }
+                ],
+                "max":  {
+                    allMax: {
+                        attack:     625,
+                        fireSpeed:  11.3,
+                        armor:      3043,
+                        movement:   86.1,
+                        levels:     28,
+                        totalPrice: 0,
+                        totalTime:  0,
+                        days:       0
+                    },
+                    maxMovementFireSpeed: {
+                        attack:     364,
+                        fireSpeed:  15.4,
+                        armor:      1468,
+                        movement:   110.8
+                    }
+                }
+            },
             "S.VULPECULA": {},
             "LACERTA": {},
             "S.LACERTA": {},

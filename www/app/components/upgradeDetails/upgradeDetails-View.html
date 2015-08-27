@@ -278,7 +278,9 @@
                             <div class="card">
                                 <div class="item item-divider-android positive-bg">
                                     <label class="text-center">
-                                        <div class="item-content largeTitle light">All MAX</div>
+                                        <div class="item-content largeTitle light">
+                                            All MAX ({{tankDetails.max.allMax.levels}} Levels)
+                                        </div>
                                     </label>
                                 </div>
                                 <div class="list-borderless">
@@ -295,7 +297,7 @@
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Fire Speed:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.allMax.fireSpeed}}
+                                                    {{tankDetails.max.allMax.fireSpeed|number:2}}
                                                 </span>
                                             </label>
                                         </div>
@@ -313,21 +315,13 @@
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Movement:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.allMax.movement}}
+                                                    {{tankDetails.max.allMax.movement|number:2}}
                                                 </span>
                                             </label>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-50">
-                                            <label class="text-left item item-input">
-                                                <span class="input-label positive">Levels:</span>
-                                                <span class="text-left item-content">
-                                                    {{tankDetails.max.allMax.levels}}
-                                                </span>
-                                            </label>
-                                        </div>
-                                        <div class="col-50">
+                                        <div class="col-75">
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Total Time:</span>
                                                 <span class="text-left item-content">
@@ -337,19 +331,21 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-50">
+                                        <div class="col-75">
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Total Price:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.allMax.totalPrice}}
+                                                    {{tankDetails.max.allMax.totalPrice|currency:'':0}}
                                                 </span>
                                             </label>
                                         </div>
-                                        <div class="col-50">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-75">
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Total Diamonds:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.allMax.totalDiamonds}}
+                                                    {{tankDetails.max.allMax.totalDiamonds|currency:'':0}}
                                                 </span>
                                             </label>
                                         </div>
@@ -376,7 +372,7 @@
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Fire Speed:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.maxMovementFireSpeed.fireSpeed}}
+                                                    {{tankDetails.max.maxMovementFireSpeed.fireSpeed|number:2}}
                                                 </span>
                                             </label>
                                         </div>
@@ -394,7 +390,7 @@
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Movement:</span>
                                                 <span class="text-left item-content">
-                                                    {{tankDetails.max.maxMovementFireSpeed.movement}}
+                                                    {{tankDetails.max.maxMovementFireSpeed.movement|number:2}}
                                                 </span>
                                             </label>
                                         </div>
@@ -406,7 +402,7 @@
                 </ion-tab>
             </ion-tabs>
         </ion-pane>
-        <ion-side-menu side="left" width="150">
+        <ion-side-menu side="left" width="200">
             <ion-header-bar class="bar-stable bar-positive has-tabs-top">
                 <h1 class="title">Menu</h1>
             </ion-header-bar>
