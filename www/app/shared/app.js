@@ -28,7 +28,6 @@ angular.module('myApp', [
                             $state.go(screen);
                         }
                     }
-                    store.save('previousEventTransactionId', '');
                 }
             );
         }

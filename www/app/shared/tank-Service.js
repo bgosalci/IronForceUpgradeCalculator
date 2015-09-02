@@ -20,29 +20,54 @@ angular.module('myApp.tankService', [])
                 totalDiamonds = calculateTotalValues(tank, items, 'diamonds');
                 return totalDiamonds;
             };
-            self.calculateTotalAttack = function (tank) {
+            self.calculateTotalAttack = function (tank, level) {
                 var items, totalAttack;
                 items = ['turret', 'barrel'];
-                totalAttack = calculateTotalValues(tank, items, 'attack');
+                totalAttack = calculateTotalValues(tank, items, 'attack', level);
                 return totalAttack;
             };
-            self.calculateTotalFireSpeed = function (tank) {
+            self.calculateTotalFireSpeed = function (tank, level) {
                 var items, totalFireSpeed;
                 items = ['turret', 'barrel'];
-                totalFireSpeed = calculateTotalValues(tank, items, 'fireSpeed');
+                totalFireSpeed = calculateTotalValues(tank, items, 'fireSpeed', level);
                 return totalFireSpeed;
             };
-            self.calculateTotalArmor = function (tank) {
+            self.calculateTotalArmor = function (tank, level) {
                 var items, totalArmor;
                 items = ['armor', 'trucks'];
-                totalArmor = calculateTotalValues(tank, items, 'armor');
+                totalArmor = calculateTotalValues(tank, items, 'armor', level);
                 return totalArmor;
             };
-            self.calculateTotalMovement = function (tank) {
+            self.calculateTotalMovement = function (tank, level) {
                 var items, totalMovement;
-                items = ['engine', 'trucks'];
-                totalMovement = calculateTotalValues(tank, items, 'movement');
+                items = ['armor', 'engine', 'trucks'];
+                totalMovement = calculateTotalValues(tank, items, 'movement', level);
                 return totalMovement;
+            };
+            self.calculatePotentialAttack = function(tank, turretLevel, barrelLevel) {
+                var returnData;
+                returnData = calculatePotentialValue(tank, 'turret', 'attack', turretLevel);
+                returnData += calculatePotentialValue(tank, 'barrel', 'attack', barrelLevel);
+                return returnData;
+            };
+            self.calculatePotentialFireSpeed = function (tank, turretLevel, barrelLevel) {
+                var returnData;
+                returnData = calculatePotentialValue(tank, 'turret', 'fireSpeed', turretLevel);
+                returnData += calculatePotentialValue(tank, 'barrel', 'fireSpeed', barrelLevel);
+                return returnData;
+            };
+            self.calculatePotentialArmor = function (tank, armorLevel, trucksLevel) {
+                var returnData;
+                returnData = calculatePotentialValue(tank, 'armor', 'armor', armorLevel);
+                returnData += calculatePotentialValue(tank, 'trucks', 'armor', trucksLevel);
+                return returnData;
+            };
+            self.calculatePotentialMovement = function (tank, armorLevel, engineLevel, trucksLevel) {
+                var returnData;
+                returnData = calculatePotentialValue(tank, 'armor', 'movement', armorLevel);
+                returnData += calculatePotentialValue(tank, 'engine', 'movement', engineLevel);
+                returnData += calculatePotentialValue(tank, 'trucks', 'movement', trucksLevel);
+                return returnData;
             };
             self.formatTotalTime = function (time) {
                 var day, hour, minute, totDays, totHours, totMinutes, returnValue;
@@ -83,17 +108,32 @@ angular.module('myApp.tankService', [])
                 }
                 return returnValue;
             };
-            function calculateTotalValues(tank, items, property) {
-                var i, y, totalValue, row, item;
+            function calculateTotalValues(tank, items, property, level) {
+                var i, y, totalValue, row, item, len;
                 totalValue = 0;
                 for (i = 0; i < items.length; i += 1) {
                     item = tank[items[i]];
-                    for (y = 0; y < item.length; y += 1) {
+                    if (angular.isDefined(level)) {
+                        len = level;
+                    } else {
+                        len = item.length;
+                    }
+                    for (y = 0; y < len; y += 1) {
                         row = item[y];
                         totalValue += row[property];
                     }
                 }
                 return totalValue;
+            }
+            function calculatePotentialValue(tank, item, property, level) {
+                var i, row, thisItem, returnData;
+                returnData = 0;
+                thisItem = tank[item];
+                for (i = 0; i < level; i += 1) {
+                    row = thisItem[i];
+                    returnData += row[property];
+                }
+                return returnData;
             }
             return self;
         }

@@ -510,10 +510,10 @@ angular.module('myApp.dataProvider', [])
                 ],
                 "max":  {
                     allMax: {
-                        attack:     66,
-                        fireSpeed:  13.3,
-                        armor:      379,
-                        movement:   62.2,
+                        attack:     0,
+                        fireSpeed:  0,
+                        armor:      0,
+                        movement:   0,
                         levels:     5,
                         totalPrice: 0,
                         totalTime:  0,
@@ -850,13 +850,202 @@ angular.module('myApp.dataProvider', [])
                         calcTime:   60 * 620,
                         price:      3120,
                         diamonds:   14
+                    },
+                    {
+                        level:      8,
+                        attack:     8,
+                        fireSpeed:  0,
+                        time:       '13h',
+                        calcTime:   60 * 780,
+                        price:      42200,
+                        diamonds:   28
+                    },
+                    {
+                        level:      9,
+                        attack:     5,
+                        fireSpeed:  0,
+                        time:       '15h 30m',
+                        calcTime:   60 * 930,
+                        price:      56950,
+                        diamonds:   33
+                    },
+                    {
+                        level:      10,
+                        attack:     8,
+                        fireSpeed:  0,
+                        time:       '18h 20m',
+                        calcTime:   60 * 1100,
+                        price:      76900,
+                        diamonds:   39
+                    },
+                    {
+                        level:      11,
+                        attack:     9,
+                        fireSpeed:  -0.1,
+                        time:       '20h 50',
+                        calcTime:   60 * 1250,
+                        price:      96150,
+                        diamonds:   44
+                    },
+                    {
+                        level:      12,
+                        attack:     9,
+                        fireSpeed:  -0.1,
+                        time:       '1d 10m',
+                        calcTime:   60 * 1450,
+                        price:      120200,
+                        diamonds:   51
+                    },
+                    {
+                        level:      13,
+                        attack:     9,
+                        fireSpeed:  -0.1,
+                        time:       '1d 3h',
+                        calcTime:   60 * 1620,
+                        price:      150200,
+                        diamonds:   70
+                    },
+                    {
+                        level:      14,
+                        attack:     8,
+                        fireSpeed:  -0.1,
+                        time:       '1d 6h',
+                        calcTime:   60 * 1800,
+                        price:      187800,
+                        diamonds:   85
+                    },
+                    {
+                        level:      15,
+                        attack:     13,
+                        fireSpeed:  -0.1,
+                        time:       '1d 9h 20m',
+                        calcTime:   60 * 2000,
+                        price:      234750,
+                        diamonds:   97
+                    },
+                    {
+                        level:      16,
+                        attack:     9,
+                        fireSpeed:  -0.2,
+                        time:       '1d 12h 40m',
+                        calcTime:   60 * 2200,
+                        price:      289950,
+                        diamonds:   114
+                    },
+                    {
+                        level:      17,
+                        attack:     13,
+                        fireSpeed:  -0.1,
+                        time:       '1d 16h',
+                        calcTime:   60 * 2400,
+                        price:      310450,
+                        diamonds:   130
+                    },
+                    {
+                        level:      18,
+                        attack:     13,
+                        fireSpeed:  -0.2,
+                        time:       '1d 19h 40m',
+                        calcTime:   60 * 2620,
+                        price:      357000,
+                        diamonds:   149
+                    },
+                    {
+                        level:      19,
+                        attack:     13,
+                        fireSpeed:  -0.2,
+                        time:       '1d 23h',
+                        calcTime:   60 * 2820,
+                        price:      410550,
+                        diamonds:   165
+                    },
+                    {
+                        level:      20,
+                        attack:     18,
+                        fireSpeed:  -0.2,
+                        time:       '2d 3h 40m',
+                        calcTime:   60 * 3100,
+                        price:      472150,
+                        diamonds:   258
+                    },
+                    {
+                        level:      21,
+                        attack:     17,
+                        fireSpeed:  -0.3,
+                        time:       '2d 7h 30m',
+                        calcTime:   60 * 3330,
+                        price:      519350,
+                        diamonds:   350
+                    },
+                    {
+                        level:      22,
+                        attack:     17,
+                        fireSpeed:  -0.2,
+                        time:       '2d 12h',
+                        calcTime:   60 * 3600,
+                        price:      571300,
+                        diamonds:   548
+                    },
+                    {
+                        level:      23,
+                        attack:     18,
+                        fireSpeed:  -0.4,
+                        time:       '2d 15h 20m',
+                        calcTime:   60 * 3800,
+                        price:      628450,
+                        diamonds:   538
+                    },
+                    {
+                        level:      24,
+                        attack:     21,
+                        fireSpeed:  -0.3,
+                        time:       '2d 22h',
+                        calcTime:   60 * 4200,
+                        price:      691300,
+                        diamonds:   698
+                    },
+                    {
+                        level:      25,
+                        attack:     18,
+                        fireSpeed:  -0.4,
+                        time:       '3d 3h',
+                        calcTime:   60 * 4500,
+                        price:      760450,
+                        diamonds:   818
+                    },
+                    {
+                        level:      26,
+                        attack:     17,
+                        fireSpeed:  -0.3,
+                        time:       '3d 8h',
+                        calcTime:   60 * 4800,
+                        price:      950550,
+                        diamonds:   938
+                    },
+                    {
+                        level:      27,
+                        attack:     22,
+                        fireSpeed:  -0.3,
+                        time:       '3d 14h 40m',
+                        calcTime:   60 * 5200,
+                        price:      1188200,
+                        diamonds:   1098
+                    },
+                    {
+                        level:      28,
+                        attack:     17,
+                        fireSpeed:  -0.4,
+                        time:       '3d 19h 40m',
+                        calcTime:   60 * 3600,
+                        price:      1485250,
+                        diamonds:   1218
                     }
                 ],
                 "barrel": [
                     {
                         level:      1,
                         attack:     0,
-                        fireSpeed:  0.6,
+                        fireSpeed:  0.2,
                         time:       '1m',
                         calcTime:   60,
                         price:      2250,
@@ -865,7 +1054,7 @@ angular.module('myApp.dataProvider', [])
                     {
                         level:      2,
                         attack:     0,
-                        fireSpeed:  0.3,
+                        fireSpeed:  0.1,
                         time:       '15m',
                         calcTime:   60 * 15,
                         price:      3650,
@@ -874,7 +1063,7 @@ angular.module('myApp.dataProvider', [])
                     {
                         level:      3,
                         attack:     0,
-                        fireSpeed:  0.3,
+                        fireSpeed:  0.1,
                         time:       '1h',
                         calcTime:   60 * 60,
                         price:      5900,
@@ -883,7 +1072,7 @@ angular.module('myApp.dataProvider', [])
                     {
                         level:      4,
                         attack:     0,
-                        fireSpeed:  0.3,
+                        fireSpeed:  0.1,
                         time:       '3h',
                         calcTime:   60 * 180,
                         price:      9550,
@@ -892,17 +1081,224 @@ angular.module('myApp.dataProvider', [])
                     {
                         level:      5,
                         attack:     0,
-                        fireSpeed:  0.3,
+                        fireSpeed:  0.1,
                         time:       '3h 50m',
                         calcTime:   60 * 230,
                         price:      15450,
                         diamonds:   14
+                    },
+                    {
+                        level:      6,
+                        attack:     0,
+                        fireSpeed:  0.2,
+                        time:       '8h',
+                        calcTime:   60 * 480,
+                        price:      20850,
+                        diamonds:   18
+                    },
+                    {
+                        level:      7,
+                        attack:     0,
+                        fireSpeed:  0.2,
+                        time:       '10h 20m',
+                        calcTime:   60 * 620,
+                        price:      28150,
+                        diamonds:   23
+                    },
+                    {
+                        level:      8,
+                        attack:     0,
+                        fireSpeed:  0.1,
+                        time:       '13h',
+                        calcTime:   60 * 780,
+                        price:      38000,
+                        diamonds:   28
+                    },
+                    {
+                        level:      9,
+                        attack:     0,
+                        fireSpeed:  0.2,
+                        time:       '15h 30m',
+                        calcTime:   60 * 930,
+                        price:      51300,
+                        diamonds:   33
+                    },
+                    {
+                        level:      10,
+                        attack:     0,
+                        fireSpeed:  0.2,
+                        time:       '18h 20m',
+                        calcTime:   60 * 1100,
+                        price:      69250,
+                        diamonds:   39
+                    },
+                    {
+                        level:      11,
+                        attack:     8,
+                        fireSpeed:  0.2,
+                        time:       '20h 50m',
+                        calcTime:   60 * 1250,
+                        price:      83100,
+                        diamonds:   44
+                    },
+                    {
+                        level:      12,
+                        attack:     5,
+                        fireSpeed:  0.3,
+                        time:       '1d 10m',
+                        calcTime:   60 * 1450,
+                        price:      99700,
+                        diamonds:   51
+                    },
+                    {
+                        level:      13,
+                        attack:     4,
+                        fireSpeed:  0.2,
+                        time:       '1d 3h',
+                        calcTime:   60 * 1620,
+                        price:      119650,
+                        diamonds:   70
+                    },
+                    {
+                        level:      14,
+                        attack:     4,
+                        fireSpeed:  0.3,
+                        time:       '1d 6h',
+                        calcTime:   60 * 1800,
+                        price:      143600,
+                        diamonds:   85
+                    },
+                    {
+                        level:      15,
+                        attack:     5,
+                        fireSpeed:  0.3,
+                        time:       '1d 9h 20m',
+                        calcTime:   60 * 2000,
+                        price:      172300,
+                        diamonds:   97
+                    },
+                    {
+                        level:      16,
+                        attack:     0,
+                        fireSpeed:  0.4,
+                        time:       '1d 12h 40m',
+                        calcTime:   60 * 2200,
+                        price:      206750,
+                        diamonds:   114
+                    },
+                    {
+                        level:      17,
+                        attack:     0,
+                        fireSpeed:  0.3,
+                        time:       '1d 16h',
+                        calcTime:   60 * 2400,
+                        price:      248100,
+                        diamonds:   130
+                    },
+                    {
+                        level:      18,
+                        attack:     0,
+                        fireSpeed:  0.5,
+                        time:       '1d 19h 40m',
+                        calcTime:   60 * 2620,
+                        price:      297700,
+                        diamonds:   149
+                    },
+                    {
+                        level:      19,
+                        attack:     0,
+                        fireSpeed:  0.4,
+                        time:       '1d 23h',
+                        calcTime:   60 * 2820,
+                        price:      357250,
+                        diamonds:   165
+                    },
+                    {
+                        level:      20,
+                        attack:     0,
+                        fireSpeed:  0.4,
+                        time:       '2d 3h 40m',
+                        calcTime:   60 * 3100,
+                        price:      428700,
+                        diamonds:   258
+                    },
+                    {
+                        level:      21,
+                        attack:     17,
+                        fireSpeed:  0,
+                        time:       '2d 7h 30m',
+                        calcTime:   60 * 3330,
+                        price:      471550,
+                        diamonds:   350
+                    },
+                    {
+                        level:      22,
+                        attack:     17,
+                        fireSpeed:  0,
+                        time:       '2d 12h',
+                        calcTime:   60 * 3600,
+                        price:      518700,
+                        diamonds:   458
+                    },
+                    {
+                        level:      23,
+                        attack:     18,
+                        fireSpeed:  0,
+                        time:       '2d 15h 20m',
+                        calcTime:   60 * 3800,
+                        price:      570550,
+                        diamonds:   538
+                    },
+                    {
+                        level:      24,
+                        attack:     22,
+                        fireSpeed:  0,
+                        time:       '2d 22h',
+                        calcTime:   60 * 4200,
+                        price:      627600,
+                        diamonds:   698
+                    },
+                    {
+                        level:      25,
+                        attack:     17,
+                        fireSpeed:  0,
+                        time:       '3d 3h',
+                        calcTime:   60 * 4500,
+                        price:      690350,
+                        diamonds:   18184
+                    },
+                    {
+                        level:      26,
+                        attack:     17,
+                        fireSpeed:  0.4,
+                        time:       '3d 8h',
+                        calcTime:   60 * 4800,
+                        price:      862950,
+                        diamonds:   938
+                    },
+                    {
+                        level:      27,
+                        attack:     22,
+                        fireSpeed:  0.4,
+                        time:       '3d 14h 40m',
+                        calcTime:   60 * 5200,
+                        price:      1078700,
+                        diamonds:   1098
+                    },
+                    {
+                        level:      28,
+                        attack:     18,
+                        fireSpeed:  0.4,
+                        time:       '3d 19h 40m',
+                        calcTime:   60 * 5500,
+                        price:      1348400,
+                        diamonds:   1218
                     }
                 ],
                 "armor": [
                     {
                         level:      1,
-                        armor:      12,
+                        armor:      14,
                         movement:   0,
                         time:       '1m',
                         calcTime:   60,
@@ -911,7 +1307,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      2,
-                        armor:      12,
+                        armor:      14,
                         movement:   0,
                         time:       '15m',
                         calcTime:   60 * 15,
@@ -920,7 +1316,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      3,
-                        armor:      18,
+                        armor:      21,
                         movement:   0,
                         time:       '1h',
                         calcTime:   60 * 60,
@@ -929,7 +1325,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      4,
-                        armor:      24,
+                        armor:      28,
                         movement:   0,
                         time:       '3h',
                         calcTime:   60 * 180,
@@ -938,18 +1334,225 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      5,
-                        armor:      27,
+                        armor:      31,
                         movement:   0,
                         time:       '3h 50m',
                         calcTime:   60 * 140,
                         price:      14800,
                         diamonds:   14
+                    },
+                    {
+                        level:      6,
+                        armor:      35,
+                        movement:   -0.7,
+                        time:       '8h',
+                        calcTime:   60 * 480,
+                        price:      20000,
+                        diamonds:   18
+                    },
+                    {
+                        level:      7,
+                        armor:      35,
+                        movement:   -1.5,
+                        time:       '10h 20m',
+                        calcTime:   60 * 620,
+                        price:      27000,
+                        diamonds:   23
+                    },
+                    {
+                        level:      8,
+                        armor:      39,
+                        movement:   -1.5,
+                        time:       '13h',
+                        calcTime:   60 * 780,
+                        price:      36450,
+                        diamonds:   28
+                    },
+                    {
+                        level:      9,
+                        armor:      42,
+                        movement:   -1.5,
+                        time:       '15h 30m',
+                        calcTime:   60 * 930,
+                        price:      49200,
+                        diamonds:   33
+                    },
+                    {
+                        level:      10,
+                        armor:      42,
+                        movement:   -2.3,
+                        time:       '18h 20m',
+                        calcTime:   60 * 1100,
+                        price:      66400,
+                        diamonds:   39
+                    },
+                    {
+                        level:      11,
+                        armor:      42,
+                        movement:   -0.7,
+                        time:       '20h 50m',
+                        calcTime:   60 * 1250,
+                        price:      83000,
+                        diamonds:   44
+                    },
+                    {
+                        level:      12,
+                        armor:      49,
+                        movement:   -1.5,
+                        time:       '1d 10m',
+                        calcTime:   60 * 1450,
+                        price:      103750,
+                        diamonds:   51
+                    },
+                    {
+                        level:      13,
+                        armor:      45,
+                        movement:   -1.5,
+                        time:       '1d 3h',
+                        calcTime:   60 * 1620,
+                        price:      129700,
+                        diamonds:   70
+                    },
+                    {
+                        level:      14,
+                        armor:      53,
+                        movement:   -1.5,
+                        time:       '1d 6h',
+                        calcTime:   60 * 1800,
+                        price:      162150,
+                        diamonds:   85
+                    },
+                    {
+                        level:      15,
+                        armor:      56,
+                        movement:   -2.3,
+                        time:       '1d 9h 20m',
+                        calcTime:   60 * 2000,
+                        price:      202300,
+                        diamonds:   97
+                    },
+                    {
+                        level:      16,
+                        armor:      59,
+                        movement:   -0.7,
+                        time:       '1d 12h 40m',
+                        calcTime:   60 * 2200,
+                        price:      233100,
+                        diamonds:   114
+                    },
+                    {
+                        level:      17,
+                        armor:      67,
+                        movement:   -1.5,
+                        time:       '1d 16h',
+                        calcTime:   60 * 2400,
+                        price:      268050,
+                        diamonds:   130
+                    },
+                    {
+                        level:      18,
+                        armor:      70,
+                        movement:   -1.5,
+                        time:       '1d 19h 40m',
+                        calcTime:   60 * 2620,
+                        price:      308250,
+                        diamonds:   149
+                    },
+                    {
+                        level:      19,
+                        armor:      77,
+                        movement:   -1.5,
+                        time:       '1d 23h',
+                        calcTime:   60 * 2820,
+                        price:      354500,
+                        diamonds:   165
+                    },
+                    {
+                        level:      20,
+                        armor:      84,
+                        movement:   -2.3,
+                        time:       '2d 3h 40m',
+                        calcTime:   60 * 3100,
+                        price:      407650,
+                        diamonds:   258
+                    },
+                    {
+                        level:      21,
+                        armor:      87,
+                        movement:   0,
+                        time:       '2d 7h 30m',
+                        calcTime:   60 * 3330,
+                        price:      448400,
+                        diamonds:   350
+                    },
+                    {
+                        level:      22,
+                        armor:      95,
+                        movement:   0,
+                        time:       '2d 12h',
+                        calcTime:   60 * 3600,
+                        price:      493250,
+                        diamonds:   458
+                    },
+                    {
+                        level:      23,
+                        armor:      101,
+                        movement:   0,
+                        time:       '2d 15h 20m',
+                        calcTime:   60 * 3800,
+                        price:      542600,
+                        diamonds:   538
+                    },
+                    {
+                        level:      24,
+                        armor:      105,
+                        movement:   0,
+                        time:       '2d 22h',
+                        calcTime:   60 * 4200,
+                        price:      595850,
+                        diamonds:   698
+                    },
+                    {
+                        level:      25,
+                        armor:      109,
+                        movement:   0,
+                        time:       '3d 3h',
+                        calcTime:   60 * 4500,
+                        price:      656550,
+                        diamonds:   818
+                    },
+                    {
+                        level:      26,
+                        armor:      87,
+                        movement:   -0.7,
+                        time:       '3d 8h',
+                        calcTime:   60 * 4800,
+                        price:      820700,
+                        diamonds:   938
+                    },
+                    {
+                        level:      27,
+                        armor:      95,
+                        movement:   -0.8,
+                        time:       '3d 14h 40m',
+                        calcTime:   60 * 5200,
+                        price:      1025900,
+                        diamonds:   1098
+                    },
+                    {
+                        level:      28,
+                        armor:      101,
+                        movement:   -0.7,
+                        time:       '3d 19h 40m',
+                        calcTime:   60 * 5500,
+                        price:      1282400,
+                        diamonds:   1218
                     }
                 ],
                 "engine": [
                     {
                         level:      1,
-                        movement:   0.6,
+                        movement:   0.3,
                         time:       '1m',
                         calcTime:   60,
                         price:      1500,
@@ -957,7 +1560,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      2,
-                        movement:   0.6,
+                        movement:   0.3,
                         time:       '15m',
                         calcTime:   60 * 15,
                         price:      2450,
@@ -965,7 +1568,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      3,
-                        movement:   0.9,
+                        movement:   0.4,
                         time:       '1h',
                         calcTime:   60 * 60,
                         price:      3950,
@@ -973,7 +1576,7 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      4,
-                        movement:   1.2,
+                        movement:   0.6,
                         time:       '3h',
                         calcTime:   60 * 180,
                         price:      6400,
@@ -981,18 +1584,202 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      5,
-                        movement:   1.5,
+                        movement:   0.8,
                         time:       '3h 50m',
-                        calcTime:   60 * 230,
+                        calcTime:   60 * 140,
                         price:      10350,
                         diamonds:   14
+                    },
+                    {
+                        level:      6,
+                        movement:   0.7,
+                        time:       '8h',
+                        calcTime:   60 * 480,
+                        price:      13950,
+                        diamonds:   18
+                    },
+                    {
+                        level:      7,
+                        movement:   0.8,
+                        time:       '10h 20m',
+                        calcTime:   60 * 620,
+                        price:      18850,
+                        diamonds:   23
+                    },
+                    {
+                        level:      8,
+                        movement:   0.7,
+                        time:       '13h',
+                        calcTime:   60 * 780,
+                        price:      25450,
+                        diamonds:   28
+                    },
+                    {
+                        level:      9,
+                        movement:   0.9,
+                        time:       '15h 30m',
+                        calcTime:   60 * 930,
+                        price:      34350,
+                        diamonds:   33
+                    },
+                    {
+                        level:      10,
+                        movement:   0.9,
+                        time:       '18h 20m',
+                        calcTime:   60 * 1100,
+                        price:      46350,
+                        diamonds:   39
+                    },
+                    {
+                        level:      11,
+                        movement:   0.9,
+                        time:       '20h 50m',
+                        calcTime:   60 * 1250,
+                        price:      57950,
+                        diamonds:   44
+                    },
+                    {
+                        level:      12,
+                        movement:   1.1,
+                        time:       '1d 10m',
+                        calcTime:   60 * 1450,
+                        price:      72450,
+                        diamonds:   51
+                    },
+                    {
+                        level:      13,
+                        movement:   1,
+                        time:       '1d 3h',
+                        calcTime:   60 * 1620,
+                        price:      90550,
+                        diamonds:   70
+                    },
+                    {
+                        level:      14,
+                        movement:   1.2,
+                        time:       '1d 6h',
+                        calcTime:   60 * 1800,
+                        price:      113200,
+                        diamonds:   85
+                    },
+                    {
+                        level:      15,
+                        movement:   1.2,
+                        time:       '1d 9h 20m',
+                        calcTime:   60 * 2000,
+                        price:      135850,
+                        diamonds:   97
+                    },
+                    {
+                        level:      16,
+                        movement:   1.2,
+                        time:       '1d 12h 40m',
+                        calcTime:   60 * 2200,
+                        price:      163000,
+                        diamonds:   114
+                    },
+                    {
+                        level:      17,
+                        movement:   1.5,
+                        time:       '1d 16h',
+                        calcTime:   60 * 2400,
+                        price:      195600,
+                        diamonds:   130
+                    },
+                    {
+                        level:      18,
+                        movement:   1.5,
+                        time:       '1d 19h 40m',
+                        calcTime:   60 * 2620,
+                        price:      234700,
+                        diamonds:   149
+                    },
+                    {
+                        level:      19,
+                        movement:   1.7,
+                        time:       '1d 23h',
+                        calcTime:   60 * 2820,
+                        price:      281650,
+                        diamonds:   165
+                    },
+                    {
+                        level:      20,
+                        movement:   1.6,
+                        time:       '2d 3h 40m',
+                        calcTime:   60 * 3100,
+                        price:      338000,
+                        diamonds:   258
+                    },
+                    {
+                        level:      21,
+                        movement:   2,
+                        time:       '2d 7h 30m',
+                        calcTime:   60 * 3330,
+                        price:      371800,
+                        diamonds:   350
+                    },
+                    {
+                        level:      22,
+                        movement:   2.1,
+                        time:       '2d 12h',
+                        calcTime:   60 * 3600,
+                        price:      409000,
+                        diamonds:   458
+                    },
+                    {
+                        level:      23,
+                        movement:   2.1,
+                        time:       '2d 15h 20m',
+                        calcTime:   60 * 3800,
+                        price:      449900,
+                        diamonds:   538
+                    },
+                    {
+                        level:      24,
+                        movement:   2.2,
+                        time:       '2d 22h',
+                        calcTime:   60 * 4200,
+                        price:      494900,
+                        diamonds:   698
+                    },
+                    {
+                        level:      25,
+                        movement:   2.3,
+                        time:       '3d 3h',
+                        calcTime:   60 * 4500,
+                        price:      544400,
+                        diamonds:   818
+                    },
+                    {
+                        level:      26,
+                        movement:   1.2,
+                        time:       '3d 8h',
+                        calcTime:   60 * 4800,
+                        price:      680500,
+                        diamonds:   938
+                    },
+                    {
+                        level:      27,
+                        movement:   1.2,
+                        time:       '3d 14h 40m',
+                        calcTime:   60 * 5200,
+                        price:      850650,
+                        diamonds:   1098
+                    },
+                    {
+                        level:      28,
+                        movement:   1.2,
+                        time:       '3d 19h 40m',
+                        calcTime:   60 * 5500,
+                        price:      1063300,
+                        diamonds:   1218
                     }
                 ],
                 "trucks": [
                     {
                         level:      1,
-                        armor:      6,
-                        movement:   0.3,
+                        armor:      7,
+                        movement:   0.1,
                         time:       '1m',
                         calcTime:   60,
                         price:      600,
@@ -1000,8 +1787,8 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      2,
-                        armor:      6,
-                        movement:   0.3,
+                        armor:      7,
+                        movement:   0.2,
                         time:       '15m',
                         calcTime:   60 * 15,
                         price:      950,
@@ -1009,8 +1796,8 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      3,
-                        armor:      6,
-                        movement:   0.6,
+                        armor:      7,
+                        movement:   0.3,
                         time:       '1h',
                         calcTime:   60 * 60,
                         price:      1550,
@@ -1018,8 +1805,8 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      4,
-                        armor:      9,
-                        movement:   0.6,
+                        armor:      10,
+                        movement:   0.3,
                         time:       '3h',
                         calcTime:   60 * 180,
                         price:      2500,
@@ -1027,18 +1814,225 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      5,
-                        armor:      9,
-                        movement:   0.6,
+                        armor:      11,
+                        movement:   0.3,
                         time:       '3h 50m',
-                        calcTime:   60 * 230,
+                        calcTime:   60 * 140,
                         price:      4050,
                         diamonds:   14
+                    },
+                    {
+                        level:      6,
+                        armor:      10,
+                        movement:   0.3,
+                        time:       '8h',
+                        calcTime:   60 * 480,
+                        price:      6100,
+                        diamonds:   18
+                    },
+                    {
+                        level:      7,
+                        armor:      14,
+                        movement:   0.4,
+                        time:       '10h 20m',
+                        calcTime:   60 * 620,
+                        price:      9150,
+                        diamonds:   23
+                    },
+                    {
+                        level:      8,
+                        armor:      11,
+                        movement:   0.3,
+                        time:       '13h',
+                        calcTime:   60 * 780,
+                        price:      13750,
+                        diamonds:   28
+                    },
+                    {
+                        level:      9,
+                        armor:      14,
+                        movement:   0.5,
+                        time:       '15h 30m',
+                        calcTime:   60 * 930,
+                        price:      20650,
+                        diamonds:   33
+                    },
+                    {
+                        level:      10,
+                        armor:      14,
+                        movement:   0.4,
+                        time:       '18h 20m',
+                        calcTime:   60 * 1100,
+                        price:      31000,
+                        diamonds:   39
+                    },
+                    {
+                        level:      11,
+                        armor:      14,
+                        movement:   0.5,
+                        time:       '20h 50m',
+                        calcTime:   60 * 1250,
+                        price:      40300,
+                        diamonds:   44
+                    },
+                    {
+                        level:      12,
+                        armor:      14,
+                        movement:   0.4,
+                        time:       '1d 10m',
+                        calcTime:   60 * 1450,
+                        price:      52400,
+                        diamonds:   51
+                    },
+                    {
+                        level:      13,
+                        armor:      17,
+                        movement:   0.5,
+                        time:       '1d 3h',
+                        calcTime:   60 * 1620,
+                        price:      68100,
+                        diamonds:   70
+                    },
+                    {
+                        level:      14,
+                        armor:      18,
+                        movement:   0.6,
+                        time:       '1d 6h',
+                        calcTime:   60 * 1800,
+                        price:      88550,
+                        diamonds:   85
+                    },
+                    {
+                        level:      15,
+                        armor:      17,
+                        movement:   0.6,
+                        time:       '1d 9h 20m',
+                        calcTime:   60 * 2000,
+                        price:      115100,
+                        diamonds:   97
+                    },
+                    {
+                        level:      16,
+                        armor:      21,
+                        movement:   0.6,
+                        time:       '1d 12h 40m',
+                        calcTime:   60 * 2200,
+                        price:      143900,
+                        diamonds:   114
+                    },
+                    {
+                        level:      17,
+                        armor:      21,
+                        movement:   0.6,
+                        time:       '1d 16h',
+                        calcTime:   60 * 2400,
+                        price:      179900,
+                        diamonds:   130
+                    },
+                    {
+                        level:      18,
+                        armor:      25,
+                        movement:   0.7,
+                        time:       '1d 19h 40m',
+                        calcTime:   60 * 2620,
+                        price:      224900,
+                        diamonds:   149
+                    },
+                    {
+                        level:      19,
+                        armor:      24,
+                        movement:   0.8,
+                        time:       '1d 23h',
+                        calcTime:   60 * 2820,
+                        price:      281150,
+                        diamonds:   165
+                    },
+                    {
+                        level:      20,
+                        armor:      28,
+                        movement:   0.9,
+                        time:       '2d 3h 40m',
+                        calcTime:   60 * 3100,
+                        price:      351450,
+                        diamonds:   258
+                    },
+                    {
+                        level:      21,
+                        armor:      28,
+                        movement:   0.9,
+                        time:       '2d 7h 30m',
+                        calcTime:   60 * 3330,
+                        price:      421750,
+                        diamonds:   350
+                    },
+                    {
+                        level:      22,
+                        armor:      32,
+                        movement:   0.9,
+                        time:       '2d 12h',
+                        calcTime:   60 * 3600,
+                        price:      506100,
+                        diamonds:   458
+                    },
+                    {
+                        level:      23,
+                        armor:      35,
+                        movement:   1,
+                        time:       '2d 15h 20m',
+                        calcTime:   60 * 3800,
+                        price:      607300,
+                        diamonds:   538
+                    },
+                    {
+                        level:      24,
+                        armor:      31,
+                        movement:   1.2,
+                        time:       '2d 22h',
+                        calcTime:   60 * 4200,
+                        price:      728750,
+                        diamonds:   698
+                    },
+                    {
+                        level:      25,
+                        armor:      35,
+                        movement:   1.1,
+                        time:       '3d 3h',
+                        calcTime:   60 * 4500,
+                        price:      874500,
+                        diamonds:   818
+                    },
+                    {
+                        level:      26,
+                        armor:      28,
+                        movement:   0.9,
+                        time:       '3d 8h',
+                        calcTime:   60 * 4800,
+                        price:      966125,
+                        diamonds:   938
+                    },
+                    {
+                        level:      27,
+                        armor:      32,
+                        movement:   0.9,
+                        time:       '3d 14h 40m',
+                        calcTime:   60 * 5200,
+                        price:      1078950,
+                        diamonds:   1098
+                    },
+                    {
+                        level:      28,
+                        armor:      35,
+                        movement:   1,
+                        time:       '3d 19h 40m',
+                        calcTime:   60 * 5500,
+                        price:      1191755,
+                        diamonds:   1218
                     }
                 ],
                 "max":  {
                     allMax: {
                         attack:     625,
-                        fireSpeed:  11.3,
+                        fireSpeed:  11.5,
                         armor:      3043,
                         movement:   86.1,
                         levels:     28,
