@@ -1,0 +1,13 @@
+<ion-popover-view class="my-popover">
+    <ion-content>
+        <div class="list" ng-repeat="option in selectLevelOptions">
+            <div class="item" ng-click="setLevel(option)">
+                <label class="text-center">
+                    <span class="item-content">
+                        {{option}}
+                    </span>
+                </label>
+            </div>
+        </div>
+    </ion-content>
+</ion-popover-view>

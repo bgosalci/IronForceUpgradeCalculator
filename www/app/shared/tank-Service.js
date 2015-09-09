@@ -2,6 +2,14 @@ angular.module('myApp.tankService', [])
     .factory('tankService', [
         function () {
             var self = this;
+            self.setSelectLevelOptions = function (levels) {
+                var returnValue, i;
+                returnValue = [];
+                for (i = 0; i < levels; i += 1) {
+                    returnValue.push(i+1);
+                }
+                return returnValue;
+            };
             self.calculateTotalTime = function (tank) {
                 var totalTime, items;
                 items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
@@ -43,6 +51,37 @@ angular.module('myApp.tankService', [])
                 items = ['armor', 'engine', 'trucks'];
                 totalMovement = calculateTotalValues(tank, items, 'movement', level);
                 return totalMovement;
+            };
+            self.calculateTankStats = function(tankName, tanks, tankDetails, upgradeCalculator) {
+                var initialAttack, initialFireSpeed, initialArmor, initialMovement, returnData;
+                initialAttack = self.getInitialValue(tankName, tanks, 'attack');
+                initialFireSpeed = self.getInitialValue(tankName, tanks, 'fireSpeed');
+                initialArmor = self.getInitialValue(tankName, tanks, 'armor');
+                initialMovement = self.getInitialValue(tankName, tanks, 'movement');
+                returnData = {
+                    attack:     self.calculatePotentialAttack(
+                        tankDetails,
+                        upgradeCalculator.tankLevels.turretLevel,
+                        upgradeCalculator.tankLevels.barrelLevel
+                    ) + initialAttack,
+                    fireSpeed:  self.calculatePotentialFireSpeed(
+                        tankDetails,
+                        upgradeCalculator.tankLevels.turretLevel,
+                        upgradeCalculator.tankLevels.barrelLevel
+                    ) + initialFireSpeed,
+                    armor:      self.calculatePotentialArmor(
+                        tankDetails,
+                        upgradeCalculator.tankLevels.armorLevel,
+                        upgradeCalculator.tankLevels.trucksLevel
+                    ) + initialArmor,
+                    movement:   self.calculatePotentialMovement(
+                        tankDetails,
+                        upgradeCalculator.tankLevels.armorLevel,
+                        upgradeCalculator.tankLevels.engineLevel,
+                        upgradeCalculator.tankLevels.trucksLevel
+                    ) + initialMovement
+                };
+                return returnData;
             };
             self.calculatePotentialAttack = function(tank, turretLevel, barrelLevel) {
                 var returnData;

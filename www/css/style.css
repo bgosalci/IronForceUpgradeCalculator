@@ -2,6 +2,15 @@ div.my-largeText{
     font-size: x-large;
 }
 
+.item .my-smallText{
+    font-size: 6pc;
+}
+
+.col-15 {
+@include flex(0, 0, 15%);
+    min-width: 15%;
+}
+
 .my-label{
     color: #719ECC !important;
     font-weight: bold !important;

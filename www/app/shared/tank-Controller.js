@@ -1,34 +1,20 @@
 angular.module('myApp.tankController', [])
-    .controller('tankController', ['$scope', 'dataProvider', '$state', 'store', 'tankService',
-        function ($scope, dataProvider, $state, store, tankService) {
-            store.save('currentScreen', {screen: $state.current.name});
+    .controller('tankController', ['$scope', 'dataProvider', '$state', 'store', 'tankService', '$ionicPopover',
+        function ($scope, dataProvider, $state, store, tankService, $ionicPopover) {
+            store.save('currentScreen', $state.current.name);
             console.log('*** Current screen: ', $state.current.name);
             $scope.tanks = dataProvider.getTankList();
             $scope.tankName = store.get('selectedTank');
             $scope.tankDetails = dataProvider.getTanksDetails($scope.tankName);
-            $scope.tankStats = {
-                attack: 0,
-                fireSpeed: 0,
-                armor: 0,
-                movement: 0
-            };
+            $ionicPopover.fromTemplateUrl('app/components/upgradeDetails/levelSelect-Template.html', {
+                scope: $scope
+            }).then(function(popover) {
+                $scope.popover = popover;
+            });
 
             $scope.goToUpgradeDetails = function (name) {
                 $scope.tankName = name;
-                $scope.tankDetails = dataProvider.getTanksDetails(name);
-                setMaxStats();
-                if (store.exists('tankLevels')) {
-                    $scope.tankLevels = store.get('tankLevels');
-                } else {
-                    $scope.tankLevels = {
-                        turretLevel: 0,
-                        barrelLevel: 0,
-                        armorLevel: 0,
-                        engineLevel: 0,
-                        trucksLevel: 0
-                    };
-                }
-                $scope.calculateTankStats();
+                $scope.prepareTankStatsData();
                 store.save('selectedTank', name);
                 $state.go('upgradeDetails');
             };
@@ -37,33 +23,29 @@ angular.module('myApp.tankController', [])
                 $state.go('tankList');
             };
 
-            $scope.calculateTankStats = function() {
-                var initialAttack, initialFireSpeed, initialArmor, initialMovement;
-                initialAttack = tankService.getInitialValue($scope.tankName, $scope.tanks, 'attack');
-                initialFireSpeed = tankService.getInitialValue($scope.tankName, $scope.tanks, 'fireSpeed');
-                initialArmor = tankService.getInitialValue($scope.tankName, $scope.tanks, 'armor');
-                initialMovement = tankService.getInitialValue($scope.tankName, $scope.tanks, 'movement');
-                $scope.tankStats.attack = tankService.calculatePotentialAttack(
-                    $scope.tankDetails,
-                    $scope.tankLevels.turretLevel,
-                    $scope.tankLevels.barrelLevel
-                ) + initialAttack;
-                $scope.tankStats.fireSpeed = tankService.calculatePotentialFireSpeed(
-                    $scope.tankDetails,
-                    $scope.tankLevels.turretLevel,
-                    $scope.tankLevels.barrelLevel
-                ) + initialFireSpeed;
-                $scope.tankStats.armor = tankService.calculatePotentialArmor(
-                    $scope.tankDetails,
-                    $scope.tankLevels.armorLevel,
-                    $scope.tankLevels.trucksLevel
-                ) + initialArmor;
-                $scope.tankStats.armor = tankService.calculatePotentialMovement(
-                    $scope.tankDetails,
-                    $scope.tankLevels.armorLevel,
-                    $scope.tankLevels.engineLevel,
-                    $scope.tankLevels.trucksLevel
-                ) + initialMovement;
+            $scope.selectLevel = function (item, $event) {
+                $scope.selectedItem = item;
+                $scope.popover.show($event);
+            };
+
+            $scope.setLevel = function (value) {
+                $scope.popover.hide();
+                $scope.upgradeCalculator.tankLevels[$scope.selectedItem] = value;
+                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
+                $scope.requestTankStatsCalculation();
+            };
+
+            $scope.$on('$destroy', function() {
+                $scope.popover.remove();
+            });
+
+            $scope.requestTankStatsCalculation = function() {
+                var calculatedTankStats;
+                calculatedTankStats = tankService.calculateTankStats($scope.tankName, $scope.tanks, $scope.tankDetails, $scope.upgradeCalculator);
+                $scope.upgradeCalculator.tankStats.attack = calculatedTankStats.attack;
+                $scope.upgradeCalculator.tankStats.fireSpeed = calculatedTankStats.fireSpeed;
+                $scope.upgradeCalculator.tankStats.armor = calculatedTankStats.armor;
+                $scope.upgradeCalculator.tankStats.movement = calculatedTankStats.movement;
             };
 
             function setMaxStats() {
@@ -80,6 +62,36 @@ angular.module('myApp.tankController', [])
                 $scope.tankDetails.max.allMax.fireSpeed = tankService.calculateTotalFireSpeed($scope.tankDetails) + initialFireSpeed;
                 $scope.tankDetails.max.allMax.armor = tankService.calculateTotalArmor($scope.tankDetails) + initialArmor;
                 $scope.tankDetails.max.allMax.movement = tankService.calculateTotalMovement($scope.tankDetails) + initialMovement;
+            }
+
+            $scope.prepareTankStatsData = function () {
+                $scope.tankDetails = dataProvider.getTanksDetails($scope.tankName);
+                setMaxStats();
+                if (store.exists($scope.tankName + '.upgradeCalculator')) {
+                    $scope.upgradeCalculator = store.get($scope.tankName + '.upgradeCalculator');
+                } else {
+                    $scope.upgradeCalculator = {
+                        tankLevels: {
+                            turretLevel: 0,
+                            barrelLevel: 0,
+                            armorLevel: 0,
+                            engineLevel: 0,
+                            trucksLevel: 0
+                        },
+                        tankStats: {
+                            attack: 0,
+                            fireSpeed: 0,
+                            armor: 0,
+                            movement: 0
+                        }
+                    };
+                }
+                $scope.selectLevelOptions  = tankService.setSelectLevelOptions($scope.tankDetails.turret.length);
+                $scope.requestTankStatsCalculation();
+            };
+
+            if (store.get('currentScreen') == 'upgradeDetails') {
+                $scope.prepareTankStatsData();
             }
         }
     ]);
