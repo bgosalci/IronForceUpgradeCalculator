@@ -23,72 +23,133 @@ angular.module('myApp.tankController', [])
                 $state.go('tankList');
             };
 
-            $scope.selectLevel = function (item, $event) {
+            $scope.selectLevel = function (item, levelsFor, statsFor, $event) {
                 $scope.selectedItem = item;
+                $scope.selectedItemLevelsFor = levelsFor;
+                $scope.selectedItemStatsFor = statsFor;
                 $scope.popover.show($event);
             };
 
             $scope.setLevel = function (value) {
+                var item;
                 $scope.popover.hide();
-                $scope.upgradeCalculator.tankLevels[$scope.selectedItem] = value;
+                item = $scope.upgradeCalculator[$scope.selectedItemLevelsFor];
+                item[$scope.selectedItem] = value;
                 store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
-                $scope.requestTankStatsCalculation();
+                $scope.requestTankStatsCalculation($scope.selectedItemStatsFor, $scope.selectedItemLevelsFor);
+                $scope.requestPriceAndTimeCalculationForTanksStats($scope.selectedItemLevelsFor);
+            };
+
+            $scope.hndlMedalUsage = function () {
+                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
+                $scope.requestPriceAndTimeCalculationForTanksStats('tankLevels');
+                $scope.requestPriceAndTimeCalculationForTanksStats('currentTankLevels');
+            };
+
+            $scope.hndlShowHideTankLevels = function () {
+                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
+                console.log('$scope.upgradeCalculator.showTankLevels: ', $scope.upgradeCalculator.showTankLevels);
             };
 
             $scope.$on('$destroy', function() {
                 $scope.popover.remove();
             });
 
-            $scope.requestTankStatsCalculation = function() {
+            $scope.requestTankStatsCalculation = function(statsSelector, levelsSelector) {
                 var calculatedTankStats;
-                calculatedTankStats = tankService.calculateTankStats($scope.tankName, $scope.tanks, $scope.tankDetails, $scope.upgradeCalculator);
-                $scope.upgradeCalculator.tankStats.attack = calculatedTankStats.attack;
-                $scope.upgradeCalculator.tankStats.fireSpeed = calculatedTankStats.fireSpeed;
-                $scope.upgradeCalculator.tankStats.armor = calculatedTankStats.armor;
-                $scope.upgradeCalculator.tankStats.movement = calculatedTankStats.movement;
+                calculatedTankStats = tankService.calculateTankStats($scope.tankName, $scope.tanks, $scope.tankDetails,
+                                                                     $scope.upgradeCalculator, levelsSelector);
+                $scope.upgradeCalculator[statsSelector].attack = calculatedTankStats.attack;
+                $scope.upgradeCalculator[statsSelector].fireSpeed = calculatedTankStats.fireSpeed;
+                $scope.upgradeCalculator[statsSelector].armor = calculatedTankStats.armor;
+                $scope.upgradeCalculator[statsSelector].movement = calculatedTankStats.movement;
+            };
+
+            $scope.requestPriceAndTimeCalculationForTanksStats = function (selector) {
+                var calculatedPriceAndTime, totalTime;
+                calculatedPriceAndTime = tankService.calculateTimeAndPriceForTankStats($scope.tankDetails, $scope.upgradeCalculator, selector);
+                if ($scope.upgradeCalculator.medalUsed) {
+                    totalTime = calculatedPriceAndTime.totalTime - ((calculatedPriceAndTime.totalTime / 100) * 25);
+                } else {
+                    totalTime = calculatedPriceAndTime.totalTime;
+                }
+                $scope.upgradeCalculator.tankUpgradeCostAndTime.displayTime = tankService.formatTotalTime(totalTime);
+                $scope.upgradeCalculator.tankUpgradeCostAndTime.price = calculatedPriceAndTime.totalPrice;
+                $scope.upgradeCalculator.tankUpgradeCostAndTime.diamonds = calculatedPriceAndTime.totalDiamonds;
             };
 
             function setMaxStats() {
-                var totalTime, initialAttack, initialFireSpeed, initialArmor, initialMovement;
-                totalTime = tankService.calculateTotalTime($scope.tankDetails);
-                initialAttack = tankService.getInitialValue($scope.tankName, $scope.tanks, 'attack');
-                initialFireSpeed = tankService.getInitialValue($scope.tankName, $scope.tanks, 'fireSpeed');
-                initialArmor = tankService.getInitialValue($scope.tankName, $scope.tanks, 'armor');
-                initialMovement = tankService.getInitialValue($scope.tankName, $scope.tanks, 'movement');
-                $scope.tankDetails.max.allMax.totalTime = tankService.formatTotalTime(totalTime);
-                $scope.tankDetails.max.allMax.totalPrice = tankService.calculateTotalPrice($scope.tankDetails);
-                $scope.tankDetails.max.allMax.totalDiamonds = tankService.calculateTotalDiamonds($scope.tankDetails);
-                $scope.tankDetails.max.allMax.attack = tankService.calculateTotalAttack($scope.tankDetails) + initialAttack;
-                $scope.tankDetails.max.allMax.fireSpeed = tankService.calculateTotalFireSpeed($scope.tankDetails) + initialFireSpeed;
-                $scope.tankDetails.max.allMax.armor = tankService.calculateTotalArmor($scope.tankDetails) + initialArmor;
-                $scope.tankDetails.max.allMax.movement = tankService.calculateTotalMovement($scope.tankDetails) + initialMovement;
+                $scope.tankDetails.max.allMax.totalTime = tankService.formatTotalTime(tankService.calculateTotalTime($scope.tankDetails, false));
+                $scope.tankDetails.max.allMax.totalPrice = tankService.calculateTotalPrice($scope.tankDetails, false);
+                $scope.tankDetails.max.allMax.totalDiamonds = tankService.calculateTotalDiamonds($scope.tankDetails, false);
+                $scope.tankDetails.max.allMax.attack = tankService.calculateTotalAttack($scope.tankDetails)
+                        + tankService.getInitialValue($scope.tankName, $scope.tanks, 'attack');
+                $scope.tankDetails.max.allMax.fireSpeed = tankService.calculateTotalFireSpeed($scope.tankDetails)
+                        + tankService.getInitialValue($scope.tankName, $scope.tanks, 'fireSpeed');
+                $scope.tankDetails.max.allMax.armor = tankService.calculateTotalArmor($scope.tankDetails)
+                        + tankService.getInitialValue($scope.tankName, $scope.tanks, 'armor');
+                $scope.tankDetails.max.allMax.movement = tankService.calculateTotalMovement($scope.tankDetails)
+                        + tankService.getInitialValue($scope.tankName, $scope.tanks, 'movement');
             }
 
             $scope.prepareTankStatsData = function () {
+                var currentCalculatorVersion = '0.0.3';
                 $scope.tankDetails = dataProvider.getTanksDetails($scope.tankName);
                 setMaxStats();
                 if (store.exists($scope.tankName + '.upgradeCalculator')) {
                     $scope.upgradeCalculator = store.get($scope.tankName + '.upgradeCalculator');
+                    if (!$scope.upgradeCalculator.hasOwnProperty('version') || $scope.upgradeCalculator.version != currentCalculatorVersion) {
+                        $scope.upgradeCalculator = createTankStatData(currentCalculatorVersion);
+                    }
                 } else {
-                    $scope.upgradeCalculator = {
-                        tankLevels: {
-                            turretLevel: 0,
-                            barrelLevel: 0,
-                            armorLevel: 0,
-                            engineLevel: 0,
-                            trucksLevel: 0
-                        },
-                        tankStats: {
-                            attack: 0,
-                            fireSpeed: 0,
-                            armor: 0,
-                            movement: 0
-                        }
-                    };
+                    $scope.upgradeCalculator = createTankStatData(currentCalculatorVersion);
                 }
                 $scope.selectLevelOptions  = tankService.setSelectLevelOptions($scope.tankDetails.turret.length);
-                $scope.requestTankStatsCalculation();
+                $scope.requestTankStatsCalculation('tankStats', 'tankLevels');
+                $scope.requestTankStatsCalculation('currentTankStats', 'currentTankLevels');
+                $scope.requestPriceAndTimeCalculationForTanksStats('tankLevels');
+                $scope.requestPriceAndTimeCalculationForTanksStats('currentTankLevels');
             };
+
+            function createTankStatData(currentCalculatorVersion) {
+                return {
+                    version: currentCalculatorVersion,
+                    showTankLevels: false,
+                    medalUsed: true,
+                    tankLevels: {
+                        turretLevel: 0,
+                        barrelLevel: 0,
+                        armorLevel: 0,
+                        engineLevel: 0,
+                        trucksLevel: 0
+                    },
+                    currentTankLevels: {
+                        turretLevel: 0,
+                        barrelLevel: 0,
+                        armorLevel: 0,
+                        engineLevel: 0,
+                        trucksLevel: 0
+                    },
+                    tankStats: {
+                        attack: 0,
+                        fireSpeed: 0,
+                        armor: 0,
+                        movement: 0
+                    },
+                    currentTankStats: {
+                        attack: 0,
+                        fireSpeed: 0,
+                        armor: 0,
+                        movement: 0
+                    },
+                    tankUpgradeCostAndTime: {
+                        price: 0,
+                        time: 0,
+                        displayTime: '0',
+                        diamonds: 0
+                    }
+                };
+            }
 
             if (store.get('currentScreen') == 'upgradeDetails') {
                 $scope.prepareTankStatsData();

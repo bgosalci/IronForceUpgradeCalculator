@@ -10,6 +10,7 @@
                 <ion-tab title="MAX">
                     <ion-nav-view>
                         <ion-content class="scroll-bg">
+                            <!-- All MAX -->
                             <div class="card">
                                 <div class="item item-divider-android positive-bg">
                                     <label class="text-center">
@@ -87,6 +88,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- MAX Speeds -->
                             <div class="card">
                                 <div class="item item-divider-android positive-bg">
                                     <label class="text-center">
@@ -132,6 +134,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- Upgrade Calculator -->
                             <div class="card">
                                 <div class="item item-divider-android positive-bg">
                                     <label class="text-center">
@@ -139,20 +142,68 @@
                                     </label>
                                 </div>
                                 <div class="item item-divider-android text-center positive">
-                                    Select levels
+                                    Select current and potential levels
+                                    <label class="text-left item item-input item-toggle">
+                                        <span class="input-label positive">Show:</span>
+                                        <span class="text-left toggle">
+                                            <input type="checkbox"
+                                                   ng-model="upgradeCalculator.showTankLevels"
+                                                   ng-change="hndlShowHideTankLevels()"/>
+                                            <span class="track">
+                                                <span class="handle"></span>
+                                            </span>
+                                        </span>
+                                    </label>
                                 </div>
-                                <div class="list-borderless">
+                                <!-- Current and Potential levels -->
+                                <div class="list-borderless" ng-show="upgradeCalculator.showTankLevels">
+                                    <!-- Header -->
                                     <div class="row">
                                         <div class="col-50">
-                                            <label class="text-left item item-input" ng-click="selectLevel('turretLevel', $event)">
+                                            <label class="item item-input">
+                                                <span class="positive">Current</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="item item-input">
+                                                <span class="positive">Potential</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Level selector -->
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('turretLevel', 'currentTankLevels', 'currentTankStats', $event)">
+                                                <span class="input-label positive">Turret:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankLevels.turretLevel}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('turretLevel', 'tankLevels', 'tankStats', $event)">
                                                 <span class="input-label positive">Turret:</span>
                                                 <span class="text-left item-content">
                                                     {{upgradeCalculator.tankLevels.turretLevel}}
                                                 </span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-50">
-                                            <label class="text-left item item-input" ng-click="selectLevel('barrelLevel', $event)">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('barrelLevel', 'currentTankLevels', 'currentTankStats', $event)">
+                                                <span class="input-label positive">Barrel:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankLevels.barrelLevel}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('barrelLevel', 'tankLevels', 'tankStats', $event)">
                                                 <span class="input-label positive">Barrel:</span>
                                                 <span class="text-left item-content">
                                                     {{upgradeCalculator.tankLevels.barrelLevel}}
@@ -162,15 +213,37 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-50">
-                                            <label class="text-left item item-input" ng-click="selectLevel('armorLevel', $event)">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('armorLevel', 'currentTankLevels', 'currentTankStats', $event)">
+                                                <span class="input-label positive">Armor:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankLevels.armorLevel}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('armorLevel', 'tankLevels', 'tankStats', $event)">
                                                 <span class="input-label positive">Armor:</span>
                                                 <span class="text-left item-content">
                                                     {{upgradeCalculator.tankLevels.armorLevel}}
                                                 </span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-50">
-                                            <label class="text-left item item-input" ng-click="selectLevel('engineLevel', $event)">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('engineLevel', 'currentTankLevels', 'currentTankStats', $event)">
+                                                <span class="input-label positive">Engine:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankLevels.engineLevel}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('engineLevel', 'tankLevels', 'tankStats', $event)">
                                                 <span class="input-label positive">Engine:</span>
                                                 <span class="text-left item-content">
                                                     {{upgradeCalculator.tankLevels.engineLevel}}
@@ -180,7 +253,17 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-50">
-                                            <label class="text-left item item-input" ng-click="selectLevel('trucksLevel', $event)">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('trucksLevel', 'currentTankLevels', 'currentTankStats', $event)">
+                                                <span class="input-label positive">Trucks:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankLevels.trucksLevel}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input"
+                                                   ng-click="selectLevel('trucksLevel', 'tankLevels', 'tankStats', $event)">
                                                 <span class="input-label positive">Trucks:</span>
                                                 <span class="text-left item-content">
                                                     {{upgradeCalculator.tankLevels.trucksLevel}}
@@ -189,16 +272,49 @@
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Current and Potential tank strengths -->
                                 <div class="item item-divider-android text-center positive">
-                                    Tank strength as per levels above
+                                    Current and potential tank strength as per levels above
                                 </div>
                                 <div class="list positive">
+                                    <!-- Header -->
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="item item-input">
+                                                <span class="positive">Current</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="item item-input">
+                                                <span class="positive">Potential</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <!-- Content -->
                                     <div class="row">
                                         <div class="col-50">
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Attack:</span>
                                                 <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankStats.attack}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Attack:</span>
+                                                <span class="text-left item-content">
                                                     {{upgradeCalculator.tankStats.attack}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Fire Speed:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankStats.fireSpeed|number:2}}
                                                 </span>
                                             </label>
                                         </div>
@@ -216,7 +332,25 @@
                                             <label class="text-left item item-input">
                                                 <span class="input-label positive">Armor:</span>
                                                 <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankStats.armor}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Armor:</span>
+                                                <span class="text-left item-content">
                                                     {{upgradeCalculator.tankStats.armor}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Movement:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankStats.movement|number:2}}
                                                 </span>
                                             </label>
                                         </div>
@@ -230,111 +364,56 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </ion-content>
-                    </ion-nav-view>
-                </ion-tab>
-                <!--<ion-tab title="TURRET">
-                    <ion-nav-view>
-                        <ion-header-bar class="bar bar-subheader">
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col">
-                                        <label class="text-left item">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Level
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Attack
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Fire Speed
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Time
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Price
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                Diamonds
-                                            </span>
-                                        </label>
-                                    </div>
+                                <div class="item item-divider-android text-center positive">
+                                    Time and cost as per levels above
                                 </div>
-                            </div>
-                        </ion-header-bar>
-                        <ion-content class="scroll-bg has-subheader">
-                            <div class="item">
-                                <div class="row" ng-repeat="item in tankDetails.turret">
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.level}}
-                                            </span>
-                                        </label>
+                                <div class="list positive">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Time:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.tankUpgradeCostAndTime.displayTime}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.tankUpgradeCostAndTime.price|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.attack}}
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.fireSpeed}}
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.time}}
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.price | currency:'':0}}
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col">
-                                        <label class="text-left item my-smallText">
-                                            <span class="text-left item-content my-smallText positive">
-                                                {{item.diamonds}}
-                                            </span>
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.tankUpgradeCostAndTime.diamonds|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input item-toggle">
+                                                <span class="input-label positive">Use Medal:</span>
+                                                <span class="text-left toggle">
+                                                    <input type="checkbox"
+                                                           ng-model="upgradeCalculator.medalUsed"
+                                                           ng-change="hndlMedalUsage()"/>
+                                                    <span class="track">
+                                                        <span class="handle"></span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </ion-content>
                     </ion-nav-view>
                 </ion-tab>
-                -->
                 <ion-tab title="TURRET">
                     <ion-nav-view>
                         <ion-content class="scroll-bg">

@@ -10,76 +10,92 @@ angular.module('myApp.tankService', [])
                 }
                 return returnValue;
             };
-            self.calculateTotalTime = function (tank) {
+            self.calculateTotalTime = function (tank, levels) {
                 var totalTime, items;
                 items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalTime = calculateTotalValues(tank, items, 'calcTime');
+                totalTime = calculateTotalValues(tank, items, levels, 'calcTime');
                 return totalTime;
             };
-            self.calculateTotalPrice = function (tank) {
+            self.calculateTotalPrice = function (tank, levels) {
                 var totalPrice, items;
                 items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalPrice = calculateTotalValues(tank, items, 'price');
+                totalPrice = calculateTotalValues(tank, items, levels, 'price');
                 return totalPrice;
             };
-            self.calculateTotalDiamonds = function (tank) {
+            self.calculateTotalDiamonds = function (tank, levels) {
                 var totalDiamonds, items;
                 items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalDiamonds = calculateTotalValues(tank, items, 'diamonds');
+                totalDiamonds = calculateTotalValues(tank, items, levels, 'diamonds');
                 return totalDiamonds;
             };
-            self.calculateTotalAttack = function (tank, level) {
+            self.calculateTotalAttack = function (tank) {
                 var items, totalAttack;
                 items = ['turret', 'barrel'];
-                totalAttack = calculateTotalValues(tank, items, 'attack', level);
+                totalAttack = calculateTotalValues(tank, items, false, 'attack');
                 return totalAttack;
             };
-            self.calculateTotalFireSpeed = function (tank, level) {
+            self.calculateTotalFireSpeed = function (tank) {
                 var items, totalFireSpeed;
                 items = ['turret', 'barrel'];
-                totalFireSpeed = calculateTotalValues(tank, items, 'fireSpeed', level);
+                totalFireSpeed = calculateTotalValues(tank, items, false, 'fireSpeed');
                 return totalFireSpeed;
             };
-            self.calculateTotalArmor = function (tank, level) {
+            self.calculateTotalArmor = function (tank) {
                 var items, totalArmor;
                 items = ['armor', 'trucks'];
-                totalArmor = calculateTotalValues(tank, items, 'armor', level);
+                totalArmor = calculateTotalValues(tank, items, false, 'armor');
                 return totalArmor;
             };
-            self.calculateTotalMovement = function (tank, level) {
+            self.calculateTotalMovement = function (tank) {
                 var items, totalMovement;
                 items = ['armor', 'engine', 'trucks'];
-                totalMovement = calculateTotalValues(tank, items, 'movement', level);
+                totalMovement = calculateTotalValues(tank, items, false, 'movement');
                 return totalMovement;
             };
-            self.calculateTankStats = function(tankName, tanks, tankDetails, upgradeCalculator) {
-                var initialAttack, initialFireSpeed, initialArmor, initialMovement, returnData;
-                initialAttack = self.getInitialValue(tankName, tanks, 'attack');
-                initialFireSpeed = self.getInitialValue(tankName, tanks, 'fireSpeed');
-                initialArmor = self.getInitialValue(tankName, tanks, 'armor');
-                initialMovement = self.getInitialValue(tankName, tanks, 'movement');
+            self.calculateTankStats = function(tankName, tanks, tankDetails, upgradeCalculator, selector) {
+                var returnData, turretLevel, barrelLevel, armorLevel, engineLevel, trucksLevel;
+                turretLevel = upgradeCalculator[selector].turretLevel;
+                barrelLevel = upgradeCalculator[selector].barrelLevel;
+                armorLevel = upgradeCalculator[selector].armorLevel;
+                engineLevel = upgradeCalculator[selector].engineLevel;
+                trucksLevel = upgradeCalculator[selector].trucksLevel;
                 returnData = {
                     attack:     self.calculatePotentialAttack(
                         tankDetails,
-                        upgradeCalculator.tankLevels.turretLevel,
-                        upgradeCalculator.tankLevels.barrelLevel
-                    ) + initialAttack,
+                        turretLevel,
+                        barrelLevel
+                    ) + self.getInitialValue(tankName, tanks, 'attack'),
                     fireSpeed:  self.calculatePotentialFireSpeed(
                         tankDetails,
-                        upgradeCalculator.tankLevels.turretLevel,
-                        upgradeCalculator.tankLevels.barrelLevel
-                    ) + initialFireSpeed,
+                        turretLevel,
+                        barrelLevel
+                    ) + self.getInitialValue(tankName, tanks, 'fireSpeed'),
                     armor:      self.calculatePotentialArmor(
                         tankDetails,
-                        upgradeCalculator.tankLevels.armorLevel,
-                        upgradeCalculator.tankLevels.trucksLevel
-                    ) + initialArmor,
+                        armorLevel,
+                        trucksLevel
+                    ) + self.getInitialValue(tankName, tanks, 'armor'),
                     movement:   self.calculatePotentialMovement(
                         tankDetails,
-                        upgradeCalculator.tankLevels.armorLevel,
-                        upgradeCalculator.tankLevels.engineLevel,
-                        upgradeCalculator.tankLevels.trucksLevel
-                    ) + initialMovement
+                        armorLevel,
+                        engineLevel,
+                        trucksLevel
+                    ) + self.getInitialValue(tankName, tanks, 'movement')
+                };
+                return returnData;
+            };
+            self.calculateTimeAndPriceForTankStats = function (tank, upgradeCalculator, selector) {
+                var returnData, levels;
+                levels = [];
+                levels.push(upgradeCalculator[selector].turretLevel);
+                levels.push(upgradeCalculator[selector].barrelLevel);
+                levels.push(upgradeCalculator[selector].armorLevel);
+                levels.push(upgradeCalculator[selector].engineLevel);
+                levels.push(upgradeCalculator[selector].trucksLevel);
+                returnData = {
+                    totalTime: self.calculateTotalTime(tank, levels),
+                    totalPrice: self.calculateTotalPrice(tank, levels),
+                    totalDiamonds: self.calculateTotalDiamonds(tank, levels)
                 };
                 return returnData;
             };
@@ -147,13 +163,13 @@ angular.module('myApp.tankService', [])
                 }
                 return returnValue;
             };
-            function calculateTotalValues(tank, items, property, level) {
+            function calculateTotalValues(tank, items, levels, property) {
                 var i, y, totalValue, row, item, len;
                 totalValue = 0;
                 for (i = 0; i < items.length; i += 1) {
                     item = tank[items[i]];
-                    if (angular.isDefined(level)) {
-                        len = level;
+                    if (levels && levels.length > 0) {
+                        len = levels[i];
                     } else {
                         len = item.length;
                     }
