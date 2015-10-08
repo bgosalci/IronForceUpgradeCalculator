@@ -35,18 +35,20 @@ angular.module('myApp.tankController', [])
                 $scope.popover.hide();
                 item = $scope.upgradeCalculator[$scope.selectedItemLevelsFor];
                 item[$scope.selectedItem] = value;
-                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
                 $scope.requestTankStatsCalculation($scope.selectedItemStatsFor, $scope.selectedItemLevelsFor);
                 $scope.requestPriceAndTimeCalculationForTanksStats($scope.selectedItemLevelsFor);
+                $scope.requestTimeAndCostCalculationFromCurrentToPotential();
+                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
             };
 
-            $scope.hndlMedalUsage = function () {
-                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
+            $scope.handleMedalUsage = function () {
                 $scope.requestPriceAndTimeCalculationForTanksStats('tankLevels');
                 $scope.requestPriceAndTimeCalculationForTanksStats('currentTankLevels');
+                $scope.requestTimeAndCostCalculationFromCurrentToPotential();
+                store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
             };
 
-            $scope.hndlShowHideTankLevels = function () {
+            $scope.handleShowHideTankLevels = function () {
                 store.save($scope.tankName + '.upgradeCalculator', $scope.upgradeCalculator);
                 console.log('$scope.upgradeCalculator.showTankLevels: ', $scope.upgradeCalculator.showTankLevels);
             };
@@ -66,16 +68,26 @@ angular.module('myApp.tankController', [])
             };
 
             $scope.requestPriceAndTimeCalculationForTanksStats = function (selector) {
-                var calculatedPriceAndTime, totalTime;
+                var calculatedPriceAndTime, totalTime, item;
                 calculatedPriceAndTime = tankService.calculateTimeAndPriceForTankStats($scope.tankDetails, $scope.upgradeCalculator, selector);
                 if ($scope.upgradeCalculator.medalUsed) {
                     totalTime = calculatedPriceAndTime.totalTime - ((calculatedPriceAndTime.totalTime / 100) * 25);
                 } else {
                     totalTime = calculatedPriceAndTime.totalTime;
                 }
-                $scope.upgradeCalculator.tankUpgradeCostAndTime.displayTime = tankService.formatTotalTime(totalTime);
-                $scope.upgradeCalculator.tankUpgradeCostAndTime.price = calculatedPriceAndTime.totalPrice;
-                $scope.upgradeCalculator.tankUpgradeCostAndTime.diamonds = calculatedPriceAndTime.totalDiamonds;
+                if (selector == 'currentTankLevels') {
+                    item = $scope.upgradeCalculator['currentTankUpgradeCostAndTime'];
+                } else {
+                    item = $scope.upgradeCalculator['tankUpgradeCostAndTime'];
+                }
+                item.time = totalTime;
+                item.displayTime = tankService.formatTotalTime(totalTime);
+                item.price = calculatedPriceAndTime.totalPrice;
+                item.diamonds = calculatedPriceAndTime.totalDiamonds;
+            };
+
+            $scope.requestTimeAndCostCalculationFromCurrentToPotential = function () {
+                $scope.upgradeCalculator = tankService.calculateTimeAndCostFromCurrentToPotential($scope.upgradeCalculator);
             };
 
             function setMaxStats() {
@@ -93,63 +105,24 @@ angular.module('myApp.tankController', [])
             }
 
             $scope.prepareTankStatsData = function () {
-                var currentCalculatorVersion = '0.0.3';
+                var currentCalculatorVersion = '0.0.6';
                 $scope.tankDetails = dataProvider.getTanksDetails($scope.tankName);
                 setMaxStats();
                 if (store.exists($scope.tankName + '.upgradeCalculator')) {
                     $scope.upgradeCalculator = store.get($scope.tankName + '.upgradeCalculator');
                     if (!$scope.upgradeCalculator.hasOwnProperty('version') || $scope.upgradeCalculator.version != currentCalculatorVersion) {
-                        $scope.upgradeCalculator = createTankStatData(currentCalculatorVersion);
+                        $scope.upgradeCalculator = tankService.createTankStatData(currentCalculatorVersion);
                     }
                 } else {
-                    $scope.upgradeCalculator = createTankStatData(currentCalculatorVersion);
+                    $scope.upgradeCalculator = tankService.createTankStatData(currentCalculatorVersion);
                 }
                 $scope.selectLevelOptions  = tankService.setSelectLevelOptions($scope.tankDetails.turret.length);
                 $scope.requestTankStatsCalculation('tankStats', 'tankLevels');
                 $scope.requestTankStatsCalculation('currentTankStats', 'currentTankLevels');
                 $scope.requestPriceAndTimeCalculationForTanksStats('tankLevels');
                 $scope.requestPriceAndTimeCalculationForTanksStats('currentTankLevels');
+                $scope.requestTimeAndCostCalculationFromCurrentToPotential();
             };
-
-            function createTankStatData(currentCalculatorVersion) {
-                return {
-                    version: currentCalculatorVersion,
-                    showTankLevels: false,
-                    medalUsed: true,
-                    tankLevels: {
-                        turretLevel: 0,
-                        barrelLevel: 0,
-                        armorLevel: 0,
-                        engineLevel: 0,
-                        trucksLevel: 0
-                    },
-                    currentTankLevels: {
-                        turretLevel: 0,
-                        barrelLevel: 0,
-                        armorLevel: 0,
-                        engineLevel: 0,
-                        trucksLevel: 0
-                    },
-                    tankStats: {
-                        attack: 0,
-                        fireSpeed: 0,
-                        armor: 0,
-                        movement: 0
-                    },
-                    currentTankStats: {
-                        attack: 0,
-                        fireSpeed: 0,
-                        armor: 0,
-                        movement: 0
-                    },
-                    tankUpgradeCostAndTime: {
-                        price: 0,
-                        time: 0,
-                        displayTime: '0',
-                        diamonds: 0
-                    }
-                };
-            }
 
             if (store.get('currentScreen') == 'upgradeDetails') {
                 $scope.prepareTankStatsData();

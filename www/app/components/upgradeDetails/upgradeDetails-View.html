@@ -365,7 +365,53 @@
                                     </div>
                                 </div>
                                 <div class="item item-divider-android text-center positive">
-                                    Time and cost as per levels above
+                                    Total time and cost for current to potential stats
+                                </div>
+                                <div class="list positive">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Time:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.timeAndCostFromCurrentToPotentialStats.displayTime}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.timeAndCostFromCurrentToPotentialStats.price|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.timeAndCostFromCurrentToPotentialStats.diamonds|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input item-toggle">
+                                                <span class="input-label positive">Use Medal:</span>
+                                                <span class="text-left toggle">
+                                                    <input type="checkbox"
+                                                           ng-model="upgradeCalculator.medalUsed"
+                                                           ng-change="handleMedalUsage('tankUpgradeCostAndTime')"/>
+                                                    <span class="track">
+                                                        <span class="handle"></span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-divider-android text-center positive">
+                                    Total time and cost for potential tank stats
                                 </div>
                                 <div class="list positive">
                                     <div class="row">
@@ -401,7 +447,53 @@
                                                 <span class="text-left toggle">
                                                     <input type="checkbox"
                                                            ng-model="upgradeCalculator.medalUsed"
-                                                           ng-change="hndlMedalUsage()"/>
+                                                           ng-change="handleMedalUsage('tankUpgradeCostAndTime')"/>
+                                                    <span class="track">
+                                                        <span class="handle"></span>
+                                                    </span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item item-divider-android text-center positive">
+                                    Total time and cost for current tank stats
+                                </div>
+                                <div class="list positive">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Time:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankUpgradeCostAndTime.displayTime}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Price:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankUpgradeCostAndTime.price|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label class="text-left item item-input">
+                                                <span class="input-label positive">Diamonds:</span>
+                                                <span class="text-left item-content">
+                                                    {{upgradeCalculator.currentTankUpgradeCostAndTime.diamonds|currency:'':0}}
+                                                </span>
+                                            </label>
+                                        </div>
+                                        <div class="col-50">
+                                            <label class="text-left item item-input item-toggle">
+                                                <span class="input-label positive">Use Medal:</span>
+                                                <span class="text-left toggle">
+                                                    <input type="checkbox"
+                                                           ng-model="upgradeCalculator.medalUsed"
+                                                           ng-change="handleMedalUsage('currentTankUpgradeCostAndTime')"/>
                                                     <span class="track">
                                                         <span class="handle"></span>
                                                     </span>
