@@ -1,0 +1,27 @@
+﻿{
+	"version": "1398653764",
+	"update": "2014/4/28 10:56:04",
+	"name": "role_rank_map",
+	"field": ["id", "rank_value", "rank_name", "require_exploit"],
+	"data":
+	[
+		[1, 1, "First Class", 0], 
+		[2, 2, "Private", 1000], 
+		[3, 3, "Basic Private", 2500], 
+		[4, 4, "Corporal", 5000], 
+		[5, 5, "Sergeant", 8000], 
+		[6, 6, "Staff Sergeant", 16000], 
+		[7, 7, "Second Lieutenant", 32000], 
+		[8, 8, "First Lieutenant", 64000], 
+		[9, 9, "Captain", 128000], 
+		[10, 10, "Major", 256000], 
+		[11, 11, "Lieutenant Colonel", 512000], 
+		[12, 12, "Colonel", 1024000], 
+		[13, 13, "Brigadier General", 2048000], 
+		[14, 14, "Major General", 4096000], 
+		[15, 15, "Lieutenant General", 8192000], 
+		[16, 16, "General", 16384000], 
+		[17, 17, "General of Army", 32768000], 
+		[18, 18, "Commander in Chief", 65536000]
+	]
+}

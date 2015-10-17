@@ -1,15 +1,9 @@
 <ion-view view-title="Tank List">
     <ion-content>
         <div class="card" ng-repeat="tank in tanks">
-            <div class="item item-divider-android positive-bg">
-                <label class="text-center">
-                    <div class="item-content largeTitle light">
-                        {{tank.name}}
-                    </div>
-                </label>
-            </div>
-            <div class="item item-image">
+            <div class="item item-avatar">
                 <img ng-src="img/{{tank.image}}"/>
+                <h2>{{tank.name}}</h2>
             </div>
             <div class="list-borderless">
                 <div class="row">

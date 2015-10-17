@@ -1,0 +1,16 @@
+﻿{
+	"version": "1413384897",
+	"update": "2014/10/15 22:54:57",
+	"name": "tank_group",
+	"field": ["group_id", "group_name", "pattern_group", "decal_group", "upgrade_group", "energy_cost_group", "energy_fill_group", "battle_group", "challenge_group"],
+	"data":
+	[
+		[10, "GROUP_NAME_10", 1, 1, 1, 1, 1, 1, 1], 
+		[20, "GROUP_NAME_20", 2, 2, 2, 2, 2, 2, 2], 
+		[30, "GROUP_NAME_30", 3, 3, 3, 3, 3, 3, 3], 
+		[40, "GROUP_NAME_40", 4, 4, 4, 4, 4, 4, 4], 
+		[41, "GROUP_NAME_41", 5, 5, 5, 5, 5, 5, 4], 
+		[50, "GROUP_NAME_50", 5, 5, 5, 5, 5, 5, 5], 
+		[51, "GROUP_NAME_51", 6, 6, 6, 6, 6, 6, 5]
+	]
+}

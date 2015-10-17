@@ -1,6 +1,6 @@
 {
   "name": "IronForceTankInfo",
-  "app_id": "",
+  "app_id": "1bf62f18",
   "gulpStartupTasks": [
     "sass",
     "watch"
