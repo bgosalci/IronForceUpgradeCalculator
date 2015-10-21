@@ -1,12 +1,12 @@
 <ion-view view-title="{{tankName}} Upgrade Details">
     <ion-side-menus enable-menu-with-back-views="false">
-        <ion-pane ion-side-menu-content>
+        <ion-pane ion-side-menu-content edge-drag-threshold="true">
             <ion-nav-bar class="bar-stable bar-positive has-tabs-top">
                 <ion-nav-buttons side="left">
                     <button class="button button-icon button-clear ion-android-menu" menu-toggle="left"></button>
                 </ion-nav-buttons>
             </ion-nav-bar>
-            <ion-tabs class="tabs-striped tabs-top tabs-positive">
+            <ion-tabs tabs-swipable="" class="tabs-striped tabs-top tabs-positive">
                 <ion-tab title="MAX">
                     <ion-nav-view>
                         <ion-content class="scroll-bg">
@@ -773,7 +773,7 @@
                 </ion-tab>
             </ion-tabs>
         </ion-pane>
-        <ion-side-menu side="left" width="200">
+        <ion-side-menu expose-aside-when="large"> side="left" width="210">
             <ion-header-bar class="bar-stable bar-positive has-tabs-top">
                 <h1 class="title">Menu</h1>
             </ion-header-bar>
@@ -782,7 +782,8 @@
                     <ion-item ng-click="goToTankList()">
                         Tank List
                     </ion-item>
-                    <ion-item ng-repeat="tank in tanks" ng-click="goToUpgradeDetails(tank.name)" menu-close>
+                    <ion-item ng-repeat="tank in tanks" ng-click="goToUpgradeDetails(tank.name)" menu-close class="item item-avatar">
+                        <img ng-src="img/{{tank.image}}"/>
                         {{tank.name}}
                     </ion-item>
                 </ion-list>

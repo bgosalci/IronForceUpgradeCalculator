@@ -107,32 +107,6 @@ angular.module('myApp.dataProvider', [])
                 }
             },
             {
-                modelName:           "Taurus",
-                image:               '',
-                modelId:             15,
-                linkedModelId:       0,
-                serialNumber:        5,
-                price:               0,
-                priceType:           "($)",
-                rankRequired:        0,
-                levels:              12,
-                tier:                2,
-                groupId:             20,
-                combatEffectiveness: 1033,
-                baseStats:           {armor: 550, attack: 84, movement: 620, fireSpeed: 115},
-                calculations:        {
-                    armor:        3,
-                    attack:       2.5,
-                    movement:     1.25,
-                    fireSpeed:    1.25,
-                    upgradeTime:  0.4,
-                    upgradePrice: 0.44,
-                    combat:       0.72,
-                    fire:         0.94,
-                    isSuperTank:  0
-                }
-            },
-            {
                 modelName:           "Apus",
                 image:               '',
                 modelId:             2,

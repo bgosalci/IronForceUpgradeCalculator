@@ -7,7 +7,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   1,
                 price:  'free',
                 payType:'',
-                image:  'tank/hydrus.png',
+                image:  'tank/Hydrus.png',
                 basicInfo: {
                     attack:     48,
                     armor:      250,
@@ -20,7 +20,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   1,
                 price:  '20,000',
                 payType:'($)',
-                image:  'tank/dorado.png',
+                image:  'tank/Dorado.png',
                 basicInfo: {
                     attack:     55,
                     armor:      350,
@@ -33,7 +33,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   1,
                 price:  20,
                 payType:'(G)',
-                image:  'tank/draco.png',
+                image:  'tank/Draco.png',
                 basicInfo: {
                     attack:     68,
                     armor:      400,
@@ -46,7 +46,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   2,
                 price:  '100,000',
                 payType:'($)',
-                image:  'tank/ursa.png',
+                image:  'tank/Ursa.png',
                 basicInfo: {
                     attack:     80,
                     armor:      500,
@@ -59,7 +59,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   2,
                 price:  'In-app purchase',
                 payType:'',
-                image:  'tank/apus.png',
+                image:  'tank/Apus.png',
                 basicInfo: {
                     attack:     84,
                     armor:      550,
@@ -72,7 +72,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   2,
                 price:  85,
                 payType:'(G)',
-                image:  'tank/sirius.png',
+                image:  'tank/Sirius.png',
                 basicInfo: {
                     attack:     100,
                     armor:      600,
@@ -85,7 +85,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   3,
                 price:  '1,000,000',
                 payType:'($)',
-                image:  'tank/aquila.png',
+                image:  'tank/Aquila.png',
                 basicInfo: {
                     attack:     110,
                     armor:      600,
@@ -98,7 +98,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   3,
                 price:  375,
                 payType:'(G)',
-                image:  'tank/lupus.png',
+                image:  'tank/Lupus.png',
                 basicInfo: {
                     attack:     135,
                     armor:      650,
@@ -111,7 +111,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   3,
                 price:  600,
                 payType:'(G)',
-                image:  'tank/corvus.png',
+                image:  'tank/Corvus.png',
                 basicInfo: {
                     attack:     140,
                     armor:      700,
@@ -124,7 +124,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  '1,000',
                 payType:'(G)',
-                image:  'tank/lynx.png',
+                image:  'tank/Lynx.png',
                 basicInfo: {
                     attack:     150,
                     armor:      800,
@@ -137,7 +137,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  'MAX LYNX',
                 payType:'',
-                image:  'tank/s-lynx.png',
+                image:  'tank/S_Lynx.png',
                 basicInfo: {
                     attack:     366,
                     armor:      2250,
@@ -150,7 +150,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  '5,000,000',
                 payType:'($)',
-                image:  'tank/vuplecula.png',
+                image:  'tank/Vulpecula.png',
                 basicInfo: {
                     attack:     130,
                     armor:      800,
@@ -163,7 +163,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  'MAX VULPECULA',
                 payType:'',
-                image:  'tank/s-vulpecula.png',
+                image:  'tank/S_Vulpecula.png',
                 basicInfo: {
                     attack:     345,
                     armor:      2150,
@@ -176,7 +176,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  '2,250',
                 payType:'(G)',
-                image:  'tank/lacerta.png',
+                image:  'tank/Lacerta.png',
                 basicInfo: {
                     attack:     188,
                     armor:      1050,
@@ -189,7 +189,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   4,
                 price:  'MAX LACERTA',
                 payType:'',
-                image:  'tank/s-lacerta.png',
+                image:  'tank/S_Lacerta.png',
                 basicInfo: {
                     attack:     425,
                     armor:      2450,
@@ -202,7 +202,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  '4,500',
                 payType:'(G)',
-                image:  'tank/scorpius.png',
+                image:  'tank/Scorpius.png',
                 basicInfo: {
                     attack:     170,
                     armor:      1350,
@@ -215,7 +215,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  'MAX SCORPIUS',
                 payType:'',
-                image:  'tank/s-scorpius.png',
+                image:  'tank/S_Scorpius.png',
                 basicInfo: {
                     attack:     488,
                     armor:      2400,
@@ -228,7 +228,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  '4,500',
                 payType:'(G)',
-                image:  'tank/pavo.png',
+                image:  'tank/Pavo.png',
                 basicInfo: {
                     attack:     120,
                     armor:      1250,
@@ -241,7 +241,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  'MAX PAVO',
                 payType:'',
-                image:  'tank/s-pavo.png',
+                image:  'tank/S_Pavo.png',
                 basicInfo: {
                     attack:     366,
                     armor:      2650,
@@ -254,7 +254,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  '5,000',
                 payType:'(G)',
-                image:  'tank/mono.png',
+                image:  'tank/Monoceros.png',
                 basicInfo: {
                     attack:     300,
                     armor:      1755,
@@ -267,7 +267,7 @@ angular.module('myApp.dataProvider', [])
                 tier:   5,
                 price:  'MAX MONOSEROS',
                 payType:'',
-                image:  'tank/s-mono.png',
+                image:  'tank/S_Monoceros.png',
                 basicInfo: {
                     attack:     566,
                     armor:      3600,
@@ -6552,11 +6552,11 @@ angular.module('myApp.dataProvider', [])
                     },
                     {
                         level:      7,
-                        armor:      46,
+                        armor:      45,
                         movement:   0.4,
                         time:       '1d 13h 55m',
                         calcTime:   60 * 2275,
-                        price:      202428,
+                        price:      202430,
                         diamonds:   120
                     },
                     {

@@ -1,6 +1,7 @@
-
+'use strict';
 angular.module('myApp', [
     'ionic',
+    'myApp.tabsSwipable',
     'myApp.store',
     'myApp.routing',
     'myApp.dataProvider',
