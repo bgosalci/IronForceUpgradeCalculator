@@ -2,6 +2,11 @@ angular.module('myApp.tankService', [])
     .factory('tankService', [
         function () {
             var self = this;
+            
+            var TANK_COMPONENTS = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
+            var ATTACK_COMPONENTS = ['turret', 'barrel'];
+            var ARMOR_COMPONENTS = ['armor', 'trucks'];
+            var MOVEMENT_COMPONENTS = ['armor', 'engine', 'trucks'];
 
             self.setSelectLevelOptions = function (levels) {
                 var returnValue, i;
@@ -13,51 +18,44 @@ angular.module('myApp.tankService', [])
             };
 
             self.calculateTotalTime = function (tank, levels) {
-                var totalTime, items;
-                items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalTime = calculateTotalValues(tank, items, levels, 'calcTime');
+                var totalTime;
+                totalTime = calculateTotalValues(tank, TANK_COMPONENTS, levels, 'calcTime');
                 return totalTime;
             };
 
             self.calculateTotalPrice = function (tank, levels) {
-                var totalPrice, items;
-                items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalPrice = calculateTotalValues(tank, items, levels, 'price');
+                var totalPrice;
+                totalPrice = calculateTotalValues(tank, TANK_COMPONENTS, levels, 'price');
                 return totalPrice;
             };
 
             self.calculateTotalDiamonds = function (tank, levels) {
-                var totalDiamonds, items;
-                items = ['turret', 'barrel', 'armor', 'engine', 'trucks'];
-                totalDiamonds = calculateTotalValues(tank, items, levels, 'diamonds');
+                var totalDiamonds;
+                totalDiamonds = calculateTotalValues(tank, TANK_COMPONENTS, levels, 'diamonds');
                 return totalDiamonds;
             };
 
             self.calculateTotalAttack = function (tank) {
-                var items, totalAttack;
-                items = ['turret', 'barrel'];
-                totalAttack = calculateTotalValues(tank, items, false, 'attack');
+                var totalAttack;
+                totalAttack = calculateTotalValues(tank, ATTACK_COMPONENTS, false, 'attack');
                 return totalAttack;
             };
 
             self.calculateTotalFireSpeed = function (tank) {
-                var items, totalFireSpeed;
-                items = ['turret', 'barrel'];
-                totalFireSpeed = calculateTotalValues(tank, items, false, 'fireSpeed');
+                var totalFireSpeed;
+                totalFireSpeed = calculateTotalValues(tank, ATTACK_COMPONENTS, false, 'fireSpeed');
                 return totalFireSpeed;
             };
 
             self.calculateTotalArmor = function (tank) {
-                var items, totalArmor;
-                items = ['armor', 'trucks'];
-                totalArmor = calculateTotalValues(tank, items, false, 'armor');
+                var totalArmor;
+                totalArmor = calculateTotalValues(tank, ARMOR_COMPONENTS, false, 'armor');
                 return totalArmor;
             };
 
             self.calculateTotalMovement = function (tank) {
-                var items, totalMovement;
-                items = ['armor', 'engine', 'trucks'];
-                totalMovement = calculateTotalValues(tank, items, false, 'movement');
+                var totalMovement;
+                totalMovement = calculateTotalValues(tank, MOVEMENT_COMPONENTS, false, 'movement');
                 return totalMovement;
             };
 
@@ -95,19 +93,15 @@ angular.module('myApp.tankService', [])
             };
 
             self.calculateTimeAndPriceForTankStats = function (tank, upgradeCalculator, selector) {
-                var returnData, levels;
-                levels = [];
-                levels.push(upgradeCalculator[selector].turretLevel);
-                levels.push(upgradeCalculator[selector].barrelLevel);
-                levels.push(upgradeCalculator[selector].armorLevel);
-                levels.push(upgradeCalculator[selector].engineLevel);
-                levels.push(upgradeCalculator[selector].trucksLevel);
-                returnData = {
-                    totalTime: self.calculateTotalTime(tank, levels),
-                    totalPrice: self.calculateTotalPrice(tank, levels),
-                    totalDiamonds: self.calculateTotalDiamonds(tank, levels)
-                };
-                return returnData;
+                var levels;
+                levels = [
+                    upgradeCalculator[selector].turretLevel,
+                    upgradeCalculator[selector].barrelLevel,
+                    upgradeCalculator[selector].armorLevel,
+                    upgradeCalculator[selector].engineLevel,
+                    upgradeCalculator[selector].trucksLevel
+                ];
+                return self.calculateAllTotalValues(tank, levels);
             };
 
             self.calculatePotentialAttack = function(tank, turretLevel, barrelLevel) {
@@ -203,6 +197,32 @@ angular.module('myApp.tankService', [])
                     }
                 }
                 return returnValue;
+            };
+
+            self.calculateAllTotalValues = function (tank, levels) {
+                var totalTime = 0, totalPrice = 0, totalDiamonds = 0;
+                var i, y, item, len, row;
+                
+                for (i = 0; i < TANK_COMPONENTS.length; i += 1) {
+                    item = tank[TANK_COMPONENTS[i]];
+                    if (levels && levels.length > 0) {
+                        len = levels[i];
+                    } else {
+                        len = item.length;
+                    }
+                    for (y = 0; y < len; y += 1) {
+                        row = item[y];
+                        totalTime += row.calcTime;
+                        totalPrice += row.price;
+                        totalDiamonds += row.diamonds;
+                    }
+                }
+                
+                return {
+                    totalTime: totalTime,
+                    totalPrice: totalPrice,
+                    totalDiamonds: totalDiamonds
+                };
             };
 
             self.createTankStatData = function (currentCalculatorVersion) {

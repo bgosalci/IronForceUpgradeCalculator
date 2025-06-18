@@ -91,9 +91,10 @@ angular.module('myApp.tankController', [])
             };
 
             function setMaxStats() {
-                $scope.tankDetails.max.allMax.totalTime = tankService.formatTotalTime(tankService.calculateTotalTime($scope.tankDetails, false));
-                $scope.tankDetails.max.allMax.totalPrice = tankService.calculateTotalPrice($scope.tankDetails, false);
-                $scope.tankDetails.max.allMax.totalDiamonds = tankService.calculateTotalDiamonds($scope.tankDetails, false);
+                var allMaxValues = tankService.calculateAllTotalValues($scope.tankDetails, false);
+                $scope.tankDetails.max.allMax.totalTime = tankService.formatTotalTime(allMaxValues.totalTime);
+                $scope.tankDetails.max.allMax.totalPrice = allMaxValues.totalPrice;
+                $scope.tankDetails.max.allMax.totalDiamonds = allMaxValues.totalDiamonds;
                 $scope.tankDetails.max.allMax.attack = tankService.calculateTotalAttack($scope.tankDetails)
                         + tankService.getInitialValue($scope.tankName, $scope.tanks, 'attack');
                 $scope.tankDetails.max.allMax.fireSpeed = tankService.calculateTotalFireSpeed($scope.tankDetails)
