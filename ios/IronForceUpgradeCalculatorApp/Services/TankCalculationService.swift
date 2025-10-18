@@ -109,19 +109,19 @@ final class TankCalculationService {
     }
 
     func calculateTotalAttack(detail: TankDetail) -> Double {
-        calculateTotalValues(detail: detail, levelKeyPaths: [\.turret, \.barrel], value: { $0.attack ?? 0 })
+        calculateTotalValues(detail: detail, levelKeyPaths: [\.turret, \.barrel], value: { $0.attack ?? 0.0 })
     }
 
     func calculateTotalFireSpeed(detail: TankDetail) -> Double {
-        calculateTotalValues(detail: detail, levelKeyPaths: [\.turret, \.barrel], value: { $0.fireSpeed ?? 0 })
+        calculateTotalValues(detail: detail, levelKeyPaths: [\.turret, \.barrel], value: { $0.fireSpeed ?? 0.0 })
     }
 
     func calculateTotalArmor(detail: TankDetail) -> Double {
-        calculateTotalValues(detail: detail, levelKeyPaths: [\.armor, \.trucks], value: { $0.armor ?? 0 })
+        calculateTotalValues(detail: detail, levelKeyPaths: [\.armor, \.trucks], value: { $0.armor ?? 0.0 })
     }
 
     func calculateTotalMovement(detail: TankDetail) -> Double {
-        calculateTotalValues(detail: detail, levelKeyPaths: [\.armor, \.engine, \.trucks], value: { $0.movement ?? 0 })
+        calculateTotalValues(detail: detail, levelKeyPaths: [\.armor, \.engine, \.trucks], value: { $0.movement ?? 0.0 })
     }
 
     private func calculatePotentialAttack(detail: TankDetail, turretLevel: Int, barrelLevel: Int) -> Double {
@@ -164,7 +164,7 @@ final class TankCalculationService {
         return total
     }
 
-    private func calculateTotalValues(detail: TankDetail, levelKeyPaths: [KeyPath<TankDetail, [UpgradeLevel]?>>, value: (UpgradeLevel) -> Double) -> Double {
+    private func calculateTotalValues(detail: TankDetail, levelKeyPaths: [KeyPath<TankDetail, [UpgradeLevel]?>], value: (UpgradeLevel) -> Double) -> Double {
         var total = 0.0
         for keyPath in levelKeyPaths {
             guard let upgrades = detail[keyPath: keyPath] else { continue }
