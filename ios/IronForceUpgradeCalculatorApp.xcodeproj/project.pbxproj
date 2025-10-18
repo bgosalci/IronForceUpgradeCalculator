@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+archiveVersion = 1;
+classes = {};
+objectVersion = 55;
+objects = {
+
+/* Begin PBXBuildFile section */
+3C1F5D5E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D3E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.swift */; };
+3C1F5D5F2B8A4A0E004A1A10 /* Tank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D3F2B8A4A0E004A1A10 /* Tank.swift */; };
+3C1F5D602B8A4A0E004A1A10 /* UpgradeCalculatorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D402B8A4A0E004A1A10 /* UpgradeCalculatorState.swift */; };
+3C1F5D612B8A4A0E004A1A10 /* TankDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D412B8A4A0E004A1A10 /* TankDataService.swift */; };
+3C1F5D622B8A4A0E004A1A10 /* TankCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D422B8A4A0E004A1A10 /* TankCalculationService.swift */; };
+3C1F5D632B8A4A0E004A1A10 /* UserDefaultsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D432B8A4A0E004A1A10 /* UserDefaultsStore.swift */; };
+3C1F5D642B8A4A0E004A1A10 /* TankListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D442B8A4A0E004A1A10 /* TankListViewModel.swift */; };
+3C1F5D652B8A4A0E004A1A10 /* TankDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D452B8A4A0E004A1A10 /* TankDetailViewModel.swift */; };
+3C1F5D662B8A4A0E004A1A10 /* TankListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D462B8A4A0E004A1A10 /* TankListView.swift */; };
+3C1F5D672B8A4A0E004A1A10 /* TankDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D472B8A4A0E004A1A10 /* TankDetailView.swift */; };
+3C1F5D682B8A4A0E004A1A10 /* LevelPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D482B8A4A0E004A1A10 /* LevelPickerSheet.swift */; };
+3C1F5D692B8A4A0E004A1A10 /* StatBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D492B8A4A0E004A1A10 /* StatBlockView.swift */; };
+3C1F5D6A2B8A4A0E004A1A10 /* CostSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4A2B8A4A0E004A1A10 /* CostSummaryView.swift */; };
+3C1F5D6B2B8A4A0E004A1A10 /* tanks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */; };
+3C1F5D762B8A4A0E004A1A10 /* CalculatorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D702B8A4A0E004A1A10 /* CalculatorServiceTests.swift */; };
+3C1F5D772B8A4A0E004A1A10 /* tanks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+3C1F5D3E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IronForceUpgradeCalculatorApp.swift; sourceTree = "<group>"; };
+3C1F5D3F2B8A4A0E004A1A10 /* Tank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tank.swift; sourceTree = "<group>"; };
+3C1F5D402B8A4A0E004A1A10 /* UpgradeCalculatorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpgradeCalculatorState.swift; sourceTree = "<group>"; };
+3C1F5D412B8A4A0E004A1A10 /* TankDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankDataService.swift; sourceTree = "<group>"; };
+3C1F5D422B8A4A0E004A1A10 /* TankCalculationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankCalculationService.swift; sourceTree = "<group>"; };
+3C1F5D432B8A4A0E004A1A10 /* UserDefaultsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsStore.swift; sourceTree = "<group>"; };
+3C1F5D442B8A4A0E004A1A10 /* TankListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankListViewModel.swift; sourceTree = "<group>"; };
+3C1F5D452B8A4A0E004A1A10 /* TankDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankDetailViewModel.swift; sourceTree = "<group>"; };
+3C1F5D462B8A4A0E004A1A10 /* TankListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankListView.swift; sourceTree = "<group>"; };
+3C1F5D472B8A4A0E004A1A10 /* TankDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TankDetailView.swift; sourceTree = "<group>"; };
+3C1F5D482B8A4A0E004A1A10 /* LevelPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelPickerSheet.swift; sourceTree = "<group>"; };
+3C1F5D492B8A4A0E004A1A10 /* StatBlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBlockView.swift; sourceTree = "<group>"; };
+3C1F5D4A2B8A4A0E004A1A10 /* CostSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostSummaryView.swift; sourceTree = "<group>"; };
+3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = tanks.json; sourceTree = "<group>"; };
+3C1F5D4C2B8A4A0E004A1A10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+3C1F5D6E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IronForceUpgradeCalculatorApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+3C1F5D6F2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IronForceUpgradeCalculatorAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+3C1F5D702B8A4A0E004A1A10 /* CalculatorServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorServiceTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+3C1F5D512B8A4A0E004A1A10 /* Frameworks */ = {
+isa = PBXFrameworksBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+3C1F5D732B8A4A0E004A1A10 /* Frameworks */ = {
+isa = PBXFrameworksBuildPhase;
+buildActionMask = 2147483647;
+files = (
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+3C1F5D3A2B8A4A0E004A1A10 = {
+isa = PBXGroup;
+children = (
+3C1F5D4D2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp */,
+3C1F5D6D2B8A4A0E004A1A10 /* Products */,
+);
+sourceTree = "<group>";
+};
+3C1F5D4D2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp */ = {
+isa = PBXGroup;
+children = (
+3C1F5D3E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.swift */,
+3C1F5D4E2B8A4A0E004A1A10 /* Models */,
+3C1F5D4F2B8A4A0E004A1A10 /* Services */,
+3C1F5D502B8A4A0E004A1A10 /* Persistence */,
+3C1F5D542B8A4A0E004A1A10 /* ViewModels */,
+3C1F5D562B8A4A0E004A1A10 /* Views */,
+3C1F5D552B8A4A0E004A1A10 /* Resources */,
+3C1F5D4C2B8A4A0E004A1A10 /* Info.plist */,
+3C1F5D702B8A4A0E004A1A10 /* CalculatorServiceTests.swift */,
+);
+path = IronForceUpgradeCalculatorApp;
+sourceTree = "<group>";
+};
+3C1F5D4E2B8A4A0E004A1A10 /* Models */ = {
+isa = PBXGroup;
+children = (
+3C1F5D3F2B8A4A0E004A1A10 /* Tank.swift */,
+3C1F5D402B8A4A0E004A1A10 /* UpgradeCalculatorState.swift */,
+);
+path = Models;
+sourceTree = "<group>";
+};
+3C1F5D4F2B8A4A0E004A1A10 /* Services */ = {
+isa = PBXGroup;
+children = (
+3C1F5D412B8A4A0E004A1A10 /* TankDataService.swift */,
+3C1F5D422B8A4A0E004A1A10 /* TankCalculationService.swift */,
+);
+path = Services;
+sourceTree = "<group>";
+};
+3C1F5D502B8A4A0E004A1A10 /* Persistence */ = {
+isa = PBXGroup;
+children = (
+3C1F5D432B8A4A0E004A1A10 /* UserDefaultsStore.swift */,
+);
+path = Persistence;
+sourceTree = "<group>";
+};
+3C1F5D522B8A4A0E004A1A10 /* Components */ = {
+isa = PBXGroup;
+children = (
+3C1F5D492B8A4A0E004A1A10 /* StatBlockView.swift */,
+3C1F5D4A2B8A4A0E004A1A10 /* CostSummaryView.swift */,
+);
+path = Components;
+sourceTree = "<group>";
+};
+3C1F5D552B8A4A0E004A1A10 /* Resources */ = {
+isa = PBXGroup;
+children = (
+3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */,
+);
+path = Resources;
+sourceTree = "<group>";
+};
+3C1F5D542B8A4A0E004A1A10 /* ViewModels */ = {
+isa = PBXGroup;
+children = (
+3C1F5D442B8A4A0E004A1A10 /* TankListViewModel.swift */,
+3C1F5D452B8A4A0E004A1A10 /* TankDetailViewModel.swift */,
+);
+path = ViewModels;
+sourceTree = "<group>";
+};
+3C1F5D562B8A4A0E004A1A10 /* Views */ = {
+isa = PBXGroup;
+children = (
+3C1F5D462B8A4A0E004A1A10 /* TankListView.swift */,
+3C1F5D472B8A4A0E004A1A10 /* TankDetailView.swift */,
+3C1F5D482B8A4A0E004A1A10 /* LevelPickerSheet.swift */,
+3C1F5D522B8A4A0E004A1A10 /* Components */,
+);
+path = Views;
+sourceTree = "<group>";
+};
+3C1F5D6D2B8A4A0E004A1A10 /* Products */ = {
+isa = PBXGroup;
+children = (
+3C1F5D6E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.app */,
+3C1F5D6F2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorAppTests.xctest */,
+);
+sourceTree = "<group>";
+};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+3C1F5D532B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp */ = {
+isa = PBXNativeTarget;
+buildConfigurationList = 3C1F5D7A2B8A4A0E004A1A10 /* Build configuration list for PBXNativeTarget "IronForceUpgradeCalculatorApp" */;
+buildPhases = (
+3C1F5D4F2B8A4A0E004A1A11 /* Sources */,
+3C1F5D512B8A4A0E004A1A10 /* Frameworks */,
+3C1F5D522B8A4A0E004A1A11 /* Resources */,
+);
+buildRules = (
+);
+dependencies = (
+);
+name = IronForceUpgradeCalculatorApp;
+productName = IronForceUpgradeCalculatorApp;
+productReference = 3C1F5D6E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.app */;
+productType = "com.apple.product-type.application";
+};
+3C1F5D712B8A4A0E004A1A10 /* IronForceUpgradeCalculatorAppTests */ = {
+isa = PBXNativeTarget;
+buildConfigurationList = 3C1F5D7D2B8A4A0E004A1A10 /* Build configuration list for PBXNativeTarget "IronForceUpgradeCalculatorAppTests" */;
+buildPhases = (
+3C1F5D722B8A4A0E004A1A11 /* Sources */,
+3C1F5D732B8A4A0E004A1A10 /* Frameworks */,
+3C1F5D742B8A4A0E004A1A11 /* Resources */,
+);
+buildRules = (
+);
+dependencies = (
+3C1F5D752B8A4A0E004A1A10 /* PBXTargetDependency */,
+);
+name = IronForceUpgradeCalculatorAppTests;
+productName = IronForceUpgradeCalculatorAppTests;
+productReference = 3C1F5D6F2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorAppTests.xctest */;
+productType = "com.apple.product-type.bundle.unit-test";
+};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+3C1F5D3B2B8A4A0E004A1A10 /* Project object */ = {
+isa = PBXProject;
+attributes = {
+LastSwiftUpdateCheck = 1500;
+LastUpgradeCheck = 1500;
+TargetAttributes = {
+3C1F5D532B8A4A0E004A1A10 = {
+DevelopmentTeam = "";
+ProvisioningStyle = Automatic;
+};
+3C1F5D712B8A4A0E004A1A10 = {
+DevelopmentTeam = "";
+ProvisioningStyle = Automatic;
+};
+};
+};
+buildConfigurationList = 3C1F5D7E2B8A4A0E004A1A10 /* Build configuration list for PBXProject "IronForceUpgradeCalculatorApp" */;
+compatibilityVersion = "Xcode 14.0";
+developmentRegion = en;
+hasScannedForEncodings = 0;
+knownRegions = (
+en,
+);
+mainGroup = 3C1F5D3A2B8A4A0E004A1A10;
+productRefGroup = 3C1F5D6D2B8A4A0E004A1A10 /* Products */;
+projectDirPath = "";
+projectRoot = "";
+targets = (
+3C1F5D532B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp */,
+3C1F5D712B8A4A0E004A1A10 /* IronForceUpgradeCalculatorAppTests */,
+);
+};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+3C1F5D522B8A4A0E004A1A11 /* Resources */ = {
+isa = PBXResourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+3C1F5D6B2B8A4A0E004A1A10 /* tanks.json in Resources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+3C1F5D742B8A4A0E004A1A11 /* Resources */ = {
+isa = PBXResourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+3C1F5D772B8A4A0E004A1A10 /* tanks.json in Resources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+3C1F5D4F2B8A4A0E004A1A11 /* Sources */ = {
+isa = PBXSourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+3C1F5D5E2B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp.swift in Sources */,
+3C1F5D5F2B8A4A0E004A1A10 /* Tank.swift in Sources */,
+3C1F5D602B8A4A0E004A1A10 /* UpgradeCalculatorState.swift in Sources */,
+3C1F5D612B8A4A0E004A1A10 /* TankDataService.swift in Sources */,
+3C1F5D622B8A4A0E004A1A10 /* TankCalculationService.swift in Sources */,
+3C1F5D632B8A4A0E004A1A10 /* UserDefaultsStore.swift in Sources */,
+3C1F5D642B8A4A0E004A1A10 /* TankListViewModel.swift in Sources */,
+3C1F5D652B8A4A0E004A1A10 /* TankDetailViewModel.swift in Sources */,
+3C1F5D662B8A4A0E004A1A10 /* TankListView.swift in Sources */,
+3C1F5D672B8A4A0E004A1A10 /* TankDetailView.swift in Sources */,
+3C1F5D682B8A4A0E004A1A10 /* LevelPickerSheet.swift in Sources */,
+3C1F5D692B8A4A0E004A1A10 /* StatBlockView.swift in Sources */,
+3C1F5D6A2B8A4A0E004A1A10 /* CostSummaryView.swift in Sources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+3C1F5D722B8A4A0E004A1A11 /* Sources */ = {
+isa = PBXSourcesBuildPhase;
+buildActionMask = 2147483647;
+files = (
+3C1F5D762B8A4A0E004A1A10 /* CalculatorServiceTests.swift in Sources */,
+);
+runOnlyForDeploymentPostprocessing = 0;
+};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+3C1F5D752B8A4A0E004A1A10 /* PBXTargetDependency */ = {isa = PBXTargetDependency; target = 3C1F5D532B8A4A0E004A1A10 /* IronForceUpgradeCalculatorApp */; targetProxy = 3C1F5D752B8A4A0E004A1A11 /* PBXContainerItemProxy */; };
+/* End PBXTargetDependency section */
+
+/* Begin PBXContainerItemProxy section */
+3C1F5D752B8A4A0E004A1A11 /* PBXContainerItemProxy */ = {
+isa = PBXContainerItemProxy;
+containerPortal = 3C1F5D3B2B8A4A0E004A1A10 /* Project object */;
+proxyType = 1;
+remoteGlobalIDString = 3C1F5D532B8A4A0E004A1A10;
+remoteInfo = IronForceUpgradeCalculatorApp;
+};
+/* End PBXContainerItemProxy section */
+
+/* Begin XCBuildConfiguration section */
+3C1F5D7B2B8A4A0E004A1A10 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ANALYZER_NONNULL = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+CLANG_WARN_BOOL_CONVERSION = YES;
+CLANG_WARN_COMMA = YES;
+CLANG_WARN_CONSTANT_CONVERSION = YES;
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+CLANG_WARN_EMPTY_BODY = YES;
+CLANG_WARN_ENUM_CONVERSION = YES;
+CLANG_WARN_INFINITE_RECURSION = YES;
+CLANG_WARN_INT_CONVERSION = YES;
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+CLANG_WARN_STRICT_PROTOTYPES = YES;
+CLANG_WARN_SUSPICIOUS_MOVE = YES;
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = dwarf;
+ENABLE_STRICT_OBJC_MSGSEND = YES;
+ENABLE_TESTABILITY = YES;
+GCC_C_LANGUAGE_STANDARD = gnu11;
+GCC_DYNAMIC_NO_PIC = NO;
+GCC_NO_COMMON_BLOCKS = YES;
+GCC_OPTIMIZATION_LEVEL = 0;
+GCC_PREPROCESSOR_DEFINITIONS = (
+"DEBUG=1",
+"$(inherited)",
+);
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+GCC_WARN_UNDECLARED_SELECTOR = YES;
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+GCC_WARN_UNUSED_FUNCTION = YES;
+GCC_WARN_UNUSED_VARIABLE = YES;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+ONLY_ACTIVE_ARCH = YES;
+SDKROOT = iphoneos;
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+};
+name = Debug;
+};
+3C1F5D7C2B8A4A0E004A1A10 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ALWAYS_SEARCH_USER_PATHS = NO;
+CLANG_ANALYZER_NONNULL = YES;
+CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+CLANG_ENABLE_MODULES = YES;
+CLANG_ENABLE_OBJC_ARC = YES;
+CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+CLANG_WARN_BOOL_CONVERSION = YES;
+CLANG_WARN_COMMA = YES;
+CLANG_WARN_CONSTANT_CONVERSION = YES;
+CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+CLANG_WARN_EMPTY_BODY = YES;
+CLANG_WARN_ENUM_CONVERSION = YES;
+CLANG_WARN_INFINITE_RECURSION = YES;
+CLANG_WARN_INT_CONVERSION = YES;
+CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+CLANG_WARN_STRICT_PROTOTYPES = YES;
+CLANG_WARN_SUSPICIOUS_MOVE = YES;
+CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+COPY_PHASE_STRIP = NO;
+DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+ENABLE_NS_ASSERTIONS = NO;
+ENABLE_STRICT_OBJC_MSGSEND = YES;
+GCC_C_LANGUAGE_STANDARD = gnu11;
+GCC_NO_COMMON_BLOCKS = YES;
+GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+GCC_WARN_UNDECLARED_SELECTOR = YES;
+GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+GCC_WARN_UNUSED_FUNCTION = YES;
+GCC_WARN_UNUSED_VARIABLE = YES;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+MTL_ENABLE_DEBUG_INFO = NO;
+SDKROOT = iphoneos;
+SWIFT_COMPILATION_MODE = wholemodule;
+SWIFT_OPTIMIZATION_LEVEL = "-O";
+};
+name = Release;
+};
+3C1F5D7F2B8A4A0E004A1A10 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = "";
+CODE_SIGN_STYLE = Automatic;
+CURRENT_PROJECT_VERSION = 1;
+DEVELOPMENT_TEAM = "";
+GENERATE_INFOPLIST_FILE = NO;
+INFOPLIST_FILE = IronForceUpgradeCalculatorApp/Info.plist;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.example.IronForceUpgradeCalculatorApp;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_EMIT_LOC_STRINGS = YES;
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Debug;
+};
+3C1F5D802B8A4A0E004A1A10 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+ASSETCATALOG_COMPILER_APPICON_NAME = "";
+CODE_SIGN_STYLE = Automatic;
+CURRENT_PROJECT_VERSION = 1;
+DEVELOPMENT_TEAM = "";
+GENERATE_INFOPLIST_FILE = NO;
+INFOPLIST_FILE = IronForceUpgradeCalculatorApp/Info.plist;
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+LD_RUNPATH_SEARCH_PATHS = (
+"$(inherited)",
+"@executable_path/Frameworks",
+);
+PRODUCT_BUNDLE_IDENTIFIER = com.example.IronForceUpgradeCalculatorApp;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_EMIT_LOC_STRINGS = YES;
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Release;
+};
+3C1F5D812B8A4A0E004A1A10 /* Debug */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+PRODUCT_BUNDLE_IDENTIFIER = com.example.IronForceUpgradeCalculatorAppTests;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Debug;
+};
+3C1F5D822B8A4A0E004A1A10 /* Release */ = {
+isa = XCBuildConfiguration;
+buildSettings = {
+CODE_SIGN_STYLE = Automatic;
+DEVELOPMENT_TEAM = "";
+IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+PRODUCT_BUNDLE_IDENTIFIER = com.example.IronForceUpgradeCalculatorAppTests;
+PRODUCT_NAME = "$(TARGET_NAME)";
+SWIFT_VERSION = 5.0;
+TARGETED_DEVICE_FAMILY = "1,2";
+};
+name = Release;
+};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+3C1F5D7A2B8A4A0E004A1A10 /* Build configuration list for PBXNativeTarget "IronForceUpgradeCalculatorApp" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+3C1F5D7F2B8A4A0E004A1A10 /* Debug */,
+3C1F5D802B8A4A0E004A1A10 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+3C1F5D7D2B8A4A0E004A1A10 /* Build configuration list for PBXNativeTarget "IronForceUpgradeCalculatorAppTests" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+3C1F5D812B8A4A0E004A1A10 /* Debug */,
+3C1F5D822B8A4A0E004A1A10 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+3C1F5D7E2B8A4A0E004A1A10 /* Build configuration list for PBXProject "IronForceUpgradeCalculatorApp" */ = {
+isa = XCConfigurationList;
+buildConfigurations = (
+3C1F5D7B2B8A4A0E004A1A10 /* Debug */,
+3C1F5D7C2B8A4A0E004A1A10 /* Release */,
+);
+defaultConfigurationIsVisible = 0;
+defaultConfigurationName = Release;
+};
+/* End XCConfigurationList section */
+
+};
+rootObject = 3C1F5D3B2B8A4A0E004A1A10 /* Project object */;
+}
