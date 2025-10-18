@@ -20,7 +20,6 @@ objects = {
 3C1F5D692B8A4A0E004A1A10 /* StatBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D492B8A4A0E004A1A10 /* StatBlockView.swift */; };
 3C1F5D6A2B8A4A0E004A1A10 /* CostSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4A2B8A4A0E004A1A10 /* CostSummaryView.swift */; };
 3C1F5D6B2B8A4A0E004A1A10 /* tanks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */; };
-3C1F5D6C2B8A4A0E004A1A10 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4C2B8A4A0E004A1A10 /* Info.plist */; };
 3C1F5D762B8A4A0E004A1A10 /* CalculatorServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C1F5D702B8A4A0E004A1A10 /* CalculatorServiceTests.swift */; };
 3C1F5D772B8A4A0E004A1A10 /* tanks.json in Resources */ = {isa = PBXBuildFile; fileRef = 3C1F5D4B2B8A4A0E004A1A10 /* tanks.json */; };
 /* End PBXBuildFile section */
@@ -240,7 +239,6 @@ isa = PBXResourcesBuildPhase;
 buildActionMask = 2147483647;
 files = (
 3C1F5D6B2B8A4A0E004A1A10 /* tanks.json in Resources */,
-3C1F5D6C2B8A4A0E004A1A10 /* Info.plist in Resources */,
 );
 runOnlyForDeploymentPostprocessing = 0;
 };
