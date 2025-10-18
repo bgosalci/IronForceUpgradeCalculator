@@ -59,7 +59,6 @@ private struct TankRowView: View {
     }
 }
 
-#Preview
 struct TankListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {

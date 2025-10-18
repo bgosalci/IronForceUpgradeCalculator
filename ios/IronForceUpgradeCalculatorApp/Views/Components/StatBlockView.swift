@@ -40,7 +40,6 @@ private struct StatValueView: View {
     }
 }
 
-#Preview
 struct StatBlockView_Previews: PreviewProvider {
     static var previews: some View {
         StatBlockView(

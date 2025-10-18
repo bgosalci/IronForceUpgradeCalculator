@@ -6,7 +6,7 @@ struct TankData: Codable {
 }
 
 struct Tank: Codable, Identifiable, Hashable {
-    struct BasicInfo: Codable {
+    struct BasicInfo: Codable, Equatable, Hashable {
         let attack: Double
         let armor: Double
         let fireSpeed: Double

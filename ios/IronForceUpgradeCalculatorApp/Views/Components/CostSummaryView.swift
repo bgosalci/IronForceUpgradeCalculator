@@ -36,7 +36,6 @@ private struct CostValueView: View {
     }
 }
 
-#Preview
 struct CostSummaryView_Previews: PreviewProvider {
     static var previews: some View {
         CostSummaryView(title: "Total Cost", cost: UpgradeCost(price: 147200, time: 109350, displayTime: "1d 6h", diamonds: 140))

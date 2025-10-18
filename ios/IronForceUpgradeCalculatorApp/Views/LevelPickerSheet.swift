@@ -43,7 +43,6 @@ struct LevelPickerSheet: View {
     }
 }
 
-#Preview
 struct LevelPickerSheet_Previews: PreviewProvider {
     static var previews: some View {
         LevelPickerSheet(title: "Turret Level", availableLevels: Array(0...5), initialValue: 2) { _ in }

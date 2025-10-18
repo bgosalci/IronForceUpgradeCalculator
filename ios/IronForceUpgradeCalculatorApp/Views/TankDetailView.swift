@@ -156,7 +156,6 @@ private struct StatValue: View {
     }
 }
 
-#Preview
 struct TankDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
