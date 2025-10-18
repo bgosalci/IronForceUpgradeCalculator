@@ -36,7 +36,7 @@ final class TankCalculationService {
     }
 
     func calculateTimeAndPriceForTankStats(detail: TankDetail, levels: UpgradeLevels) -> TankUpgradeTotals {
-        let components: [(UpgradeLevels) -> Int, [UpgradeLevel]?] = [
+        let components: [((UpgradeLevels) -> Int, [UpgradeLevel]?)] = [
             ({ $0.turretLevel }, detail.turret),
             ({ $0.barrelLevel }, detail.barrel),
             ({ $0.armorLevel }, detail.armor),
@@ -164,7 +164,7 @@ final class TankCalculationService {
         return total
     }
 
-    private func calculateTotalValues(detail: TankDetail, levelKeyPaths: [KeyPath<TankDetail, [UpgradeLevel]? >], value: (UpgradeLevel) -> Double) -> Double {
+    private func calculateTotalValues(detail: TankDetail, levelKeyPaths: [KeyPath<TankDetail, [UpgradeLevel]?>>, value: (UpgradeLevel) -> Double) -> Double {
         var total = 0.0
         for keyPath in levelKeyPaths {
             guard let upgrades = detail[keyPath: keyPath] else { continue }
